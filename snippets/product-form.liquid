@@ -1,3 +1,12 @@
+{%- assign colors = settings.product_colors | strip_html | downcase | split: ',' -%}
+<style>
+    {% for color in colors %}
+    {% assign color_value = color | split: ':' %}
+    .background-{{ color_value[0] | handleize }} {
+        background-color: {{ color_value[1] }} !important;
+    }
+    {% endfor %}
+</style>
 <form action="/cart/add" method="post" enctype="multipart/form-data" id="add-to-cart-{{ product.handle }}">
     {% unless product.has_only_default_variant %}
         {% for product_option in product.options_with_values %}
