@@ -3686,16 +3686,6 @@ img {
   width: 100%;
 }
 
-.page-width {
-  max-width: 120rem;
-  margin: 0 auto;
-}
-
-@media screen and (min-width: 768px) {
-  .page-width {
-    padding: 0 5rem;
-  }
-}
 .checkbox {
   cursor: pointer;
   position: relative;
@@ -3732,23 +3722,6 @@ img {
 .full-image img {
   display: block;
   width: 100%;
-}
-
-.flex {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.j-center {
-  justify-content: center;
-}
-
-.a-center {
-  align-items: center;
-}
-
-.j-between {
-  justify-content: space-between;
 }
 
 .spacing-top-s {
