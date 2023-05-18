@@ -193,7 +193,7 @@ $(window).on('load', function () {
         if (satisfied) {
           satisfied = option.value === variant[option.index];
         }
-        console.log(variant[option.index]);
+        console.log(option.index);
       });
       if (satisfied) {
         found = variant;
