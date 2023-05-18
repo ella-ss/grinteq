@@ -123,6 +123,18 @@ img {
   justify-content: center;
 }
 
+.spacing-bottom-s {
+  padding-bottom: 10px;
+}
+
+.spacing-bottom-m {
+  padding-bottom: 20px;
+}
+
+.spacing-bottom-l {
+  padding-bottom: 50px;
+}
+
 .page-width {
   max-width: 1200px;
 }
