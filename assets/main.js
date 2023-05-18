@@ -101,7 +101,6 @@ $(window).on('load', function () {
     $('.product-slider').slick('slickGoTo', slideIndex - 1);
   }
   function update_product_price(variant) {
-    //let currency = theme.moneyFormat.substring(0, 1);
     let regular_price = variant.price;
     let compare_price = variant.compare_at_price;
     let regular_price_output = '<span class="money regular_price" id="regular_price">' + theme.Currency.formatMoney(regular_price, theme.moneyFormat) + "</span>";
@@ -109,12 +108,12 @@ $(window).on('load', function () {
       let compare_price_output = '<span class="money compare_price" id="compare_price"> ' + theme.Currency.formatMoney(compare_price, theme.moneyFormat) + "</span>";
       let saved_price = Math.round(compare_price - regular_price);
       let saved_price_output = '<span class="save_amount" id="save_amount"> Save up to ' + theme.Currency.formatMoney(saved_price, theme.moneyFormat) + "</span>";
-      output = regular_price_output + compare_price_output + saved_price_output;
+      let output = regular_price_output + compare_price_output + saved_price_output;
     } else {
       let compare_price_output = "";
       let saved_price = "";
       let saved_price_output = "";
-      output = regular_price_output + compare_price_output + saved_price_output;
+      let output = regular_price_output + compare_price_output + saved_price_output;
     }
     $('#product_price').html(output);
     console.log(variant);
