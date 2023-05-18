@@ -3,7 +3,7 @@ window.product = {};
 window.product.variants = [];
 {% for variant in product.variants %}
     window.product.variants.push({
-        id: {{ variant.id }},
+        id: '{{ variant.id }}',
         title: '{{ variant.title }}',
         available: {{ variant.available }},
         price: {{ variant.price }},
