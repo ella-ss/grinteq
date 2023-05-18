@@ -3956,7 +3956,7 @@ select {
 }
 
 .swatch[data-name=Size],
-.swatch[data-name=Material] {
+.swatch[data-name=Icon] {
   width: -moz-max-content;
   width: max-content;
   min-width: 45px;
@@ -3965,7 +3965,7 @@ select {
   background: #ededed;
 }
 .swatch[data-name=Size].active,
-.swatch[data-name=Material].active {
+.swatch[data-name=Icon].active {
   background: #d0d0d0;
 }
 
