@@ -3987,8 +3987,10 @@ select {
 
 .product-slider_arrows {
   position: absolute;
-  bottom: 10%;
+  left: calc(50% - 100px);
+  bottom: 17.5%;
   width: 200px;
+  z-index: 1;
 }
 
 .slick-arrow {
