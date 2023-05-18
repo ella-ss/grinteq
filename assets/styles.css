@@ -117,10 +117,15 @@ img {
 
 .flex {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .j-center {
   justify-content: center;
+}
+
+.j-between {
+  justify-content: space-between;
 }
 
 .spacing-bottom-s {
