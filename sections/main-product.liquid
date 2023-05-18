@@ -42,7 +42,7 @@
                         {% endfor %}
                     {% endif %}
                 </div>
-                <div class="product-slider_arrows d-flex justify-content-between">
+                <div class="product-slider_arrows d-flex justify-content-center">
                     <div class="prev_btn">
                         {% include 'slider-arrow' %}
                     </div>
@@ -50,7 +50,7 @@
                         {% include 'slider-arrow' %}
                     </div>
                 </div>
-                <div class="product-slider_nav mt-2">
+                <div class="product-slider_nav mt-5">
                     {% if product.images.size > 1 %}
                         {% for image in product.images %}
                             <img class="px-3" width="50" src="{{ image.src | img_url: '200x200', crop:'center' }}" alt="{{ image.alt | escape }}">

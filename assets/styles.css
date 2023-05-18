@@ -3987,8 +3987,8 @@ select {
 
 .product-slider_arrows {
   position: absolute;
-  bottom: 50px;
-  width: 97%;
+  bottom: 10%;
+  width: 200px;
   z-index: 1;
 }
 
