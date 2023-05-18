@@ -184,6 +184,7 @@ $(window).on('load', function () {
     let selectedValues = getVariantFromSwatches();
     let variants = window.product.variants;
     let found = false;
+    console.log(arr, 'selected');
     variants.forEach(function (variant) {
       let satisfied = true;
       let options = variant.options;
