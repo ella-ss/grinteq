@@ -3946,6 +3946,6 @@ select {
   top: -2px;
   width: 32px;
   height: 32px;
-  box-shadow: 0 0 0 0.5px #696969;
+  box-shadow: 0 0 0 1px #040404;
   border: 3px solid white;
 }
