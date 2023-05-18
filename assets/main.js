@@ -42,6 +42,7 @@ $(window).on('load', function () {
         });
       }
     });
+    console.log(variantArr);
     return variantArr;
   }
   function updateHistoryState(variant) {
