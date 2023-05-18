@@ -137,7 +137,6 @@ $(window).on('load', function () {
     let found = false;
     variants.forEach(function (variant) {
       let satisfied = true;
-      let options = variant.options;
       selectedValues.forEach(function (option) {
         if (satisfied) {
           satisfied = option.value === variant[option.index];
