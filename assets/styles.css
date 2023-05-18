@@ -3996,6 +3996,7 @@ select {
 .slick-arrow {
   width: 30px;
   height: 30px;
+  margin: 0 10px;
   background: none;
   border: 0;
   cursor: pointer;
