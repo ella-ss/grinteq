@@ -13,7 +13,7 @@ $(window).on('load', function () {
   // get an array with options of clicked variant (ie value: 'Black', index: 'option1')
   function getVariantFromOptions() {
     let variantArr = [];
-    $('.product-category .form_action').map(function (i, el) {
+    $('.product-option .form_action').map(function (i, el) {
       let type = $(this).attr('type');
       if (type === 'radio' || type === 'checkbox') {
         if ($(el).is(':checked')) {
@@ -35,7 +35,7 @@ $(window).on('load', function () {
   }
   function getVariantFromSwatches() {
     let variantArr = [];
-    $('.product-category input[type=radio]').map(function (i, el) {
+    $('.product-option input[type=radio]').map(function (i, el) {
       if ($(el).is(':checked')) {
         variantArr.push({
           value: $(el).val(),
