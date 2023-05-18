@@ -11,28 +11,6 @@ $(window).on('load', function () {
   }
 
   // get an array with options of clicked variant (ie value: 'Black', index: 'option1')
-  function getVariantFromOptions() {
-    let variantArr = [];
-    $('.product-option .form_action').map(function (i, el) {
-      let type = $(this).attr('type');
-      if (type === 'radio' || type === 'checkbox') {
-        if ($(el).is(':checked')) {
-          variantArr.push({
-            value: $(el).val(),
-            index: $(el).attr('data-index')
-          });
-        }
-      } else {
-        let variant = {
-          value: $(el).val(),
-          index: $(el).data('index')
-        };
-        variantArr.push(variant);
-      }
-    });
-    console.log('ARR', variantArr);
-    return variantArr;
-  }
   function getVariantFromSwatches() {
     let variantArr = [];
     $('.product-option input[type=radio]').map(function (i, el) {
@@ -66,6 +44,10 @@ $(window).on('load', function () {
     if ($(this).next().val() > 1) {
       if ($(this).next().val() > 1) $(this).next().val(+$(this).next().val() - 1);
     }
+  });
+  $('.swatch').click(function () {
+    $('.swatch').removeClass('active');
+    $(this).addClass('active');
   });
   function update_variant_id(variant) {
     $('#variant_id').val(variant);
