@@ -1,0 +1,13 @@
+<div class="page-width{% if cart == empty %} is-empty{% endif %}">
+    {%- for item in cart.items -%}
+        <a href="{{ item.url }}">{{ item.product.title | escape }}</a>
+        <img src="{{ item.image | image_url: width: 300 }}"
+             class="cart-item__image"
+             alt="{{ item.image.alt | escape }}"
+             loading="lazy"
+             width="150"
+             height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}"
+        >
+        =====
+    {%- endfor -%}
+</div>
