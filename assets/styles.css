@@ -3932,3 +3932,7 @@ select {
   text-decoration: underline;
   font-size: inherit;
 }
+
+.swatch[data-name=Color] {
+  text-indent: -9999px;
+}
