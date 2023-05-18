@@ -1,15 +1,6 @@
 "use strict";
 
 $(window).on('load', function () {
-  function isNumber(evt) {
-    evt = evt ? evt : window.event;
-    let charCode = evt.which ? evt.which : evt.keyCode;
-    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-      return false;
-    }
-    return true;
-  }
-
   // get an array with options of clicked variant (ie value: 'Black', index: 'option1')
   function getVariantFromSwatches() {
     let variantArr = [];
