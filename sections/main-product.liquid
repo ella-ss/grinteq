@@ -1,5 +1,5 @@
 <section data-section-id="{{ section.id }}" data-section-type="product" class="section-padding">
-    <div class="container ">
+    <div class="container">
 
         <div class="row">
             <div class="col-md-6">
@@ -100,7 +100,7 @@
                                 {% unless product.has_only_default_variant %}
                                     {% for product_option in product.options_with_values %}
                                         <div class="product_specifications">
-                                            <h4 class="h4">{{ product_option.name }}</h1>
+                                            <h4 class="h4">{{ product_option.name }}</h4>
                                                 <ul>
                                                     {% for value in product_option.values %}
                                                         <li >{{ value }}</li>
