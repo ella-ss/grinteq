@@ -3938,14 +3938,14 @@ select {
 }
 
 .swatch[data-name=Color] {
-  width: 45px;
-  height: 45px;
+  width: 35px;
+  height: 35px;
 }
 .swatch[data-name=Color].active {
   position: relative;
   top: -2px;
-  width: 47px;
-  height: 47px;
+  width: 37px;
+  height: 37px;
   box-shadow: 0 0 0 1px #040404;
   border: 3px solid white;
 }
