@@ -4012,8 +4012,14 @@ select {
 
 @media all and (max-width: 768px) {
   .product-slider_arrows {
-    position: absolute;
-    left: calc(50% - 100px);
-    bottom: 19%;
+    bottom: 13%;
+  }
+  .slick-arrow {
+    width: 20px;
+    height: 20px;
+  }
+  .slick-arrow svg {
+    width: 20px;
+    height: 20px;
   }
 }
