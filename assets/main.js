@@ -1,5 +1,8 @@
 "use strict";
 
+if (typeof ShopifyAPI === 'undefined') {
+  ShopifyAPI = {};
+}
 $(window).on('load', function () {
   function isNumber(evt) {
     evt = evt ? evt : window.event;
