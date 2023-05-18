@@ -5,3 +5,12 @@
         </ul>
     </div>
 </div>
+<script>
+    $(".list").kp_load_more({
+        elements: 'li',
+        load_data: 8,
+        per_page: 8,
+        json_url: 'https://gediyaj.myshopify.com/products.json',
+        shopify: true
+    });
+</script>
