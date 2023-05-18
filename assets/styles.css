@@ -3968,3 +3968,10 @@ select {
 .swatch[data-name=Material].active {
   background: #d0d0d0;
 }
+
+.qty_button {
+  border: 0;
+  background: #ededed;
+  width: 30px;
+  height: 30px;
+}
