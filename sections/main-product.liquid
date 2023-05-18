@@ -1,6 +1,5 @@
 <section data-section-id="{{ section.id }}" data-section-type="product" class="section-padding">
     <div class="container">
-
         <div class="row">
             <div class="col-md-6">
                 {%- assign current_variant = product.selected_or_first_available_variant -%}
@@ -34,29 +33,10 @@
 
                 {% include 'product-price' %}
                 {% include 'product-form' %}
-                {% if section.settings.product_sku != blank %}
-                    <div id="product_sku" {% if section.settings.product_sku == blank %} style="display: none;" {% endif %}>
-                        <span><strong>SKU: </strong> {{ product.selected_or_first_available_variant.sku }}</span>
-                    </div>
-                {% endif %}
-
-                {% if section.settings.product_categories != blank %}
-                    <div class="product_collections">
-                        <ul>
-                            <li><span><strong>CATEGORIES:</strong></span> </li>
-                            {% for collection in product.collections %}
-                                {% if collection.title == 'Home page' %}
-                                {% else %}
-                                    <li><a href="{{ collection.url }}">{{ collection.title }}</a></li>
-                                {% endif %}
-                            {% endfor %}
-                        </ul>
-                    </div>
-                {% endif %}
 
                 <div class="rte product_description">
                     {% if section.settings.short_description %}
-                        {{ product.description | truncate:250 }}
+                        {{ product.description | truncate: 250 }}
                     {% else %}
                         {{ product.description }}
                     {% endif %}
