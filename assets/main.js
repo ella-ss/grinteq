@@ -125,11 +125,11 @@ $(window).on('load', function () {
   }
   function update_add_to_cart_text(variant) {
     if (variant.available == false) {
-      $("#addToCart").attr("disabled", true);
-      $("#addToCart").text("Sold Out");
+      $('#addToCart').attr("disabled", true);
+      $('#addToCart').text("Sold Out");
     } else {
-      $("#addToCart").attr("disabled", false);
-      $("#addToCart").text("Add to Cart");
+      $('#addToCart').attr("disabled", false);
+      $('#addToCart').text("Add to Cart");
     }
   }
   function update_product_price(variant) {
