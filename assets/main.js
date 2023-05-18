@@ -96,7 +96,6 @@ $(window).on('load', function () {
   }
   function update_slider_image(variant) {
     let slideIndex = $('#' + variant).attr('data-index');
-    console.log(variant);
     $('.product-slider').slick('slickGoTo', slideIndex - 1);
   }
   function update_product_price(variant) {
@@ -151,7 +150,6 @@ $(window).on('load', function () {
     updateMasterVariant(found);
     updateHistoryState(found);
     update_product_price(found);
-    console.log(found.id);
   });
   $('.product-slider').slick({
     slidesToShow: 1,
