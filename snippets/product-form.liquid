@@ -26,7 +26,7 @@
     {% endunless %}
     <input type="hidden" name="id"  id="variant_id" value="{{ product.selected_or_first_available_variant.id }}" class="form-control">
 
-    <select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js">
+    <select name="id" id="ProductSelect-{{ section.id }}" class="d-none product-form__variants no-js">
         {% for variant in product.variants %}
             <option value="{{ variant.id }}"
                     {%- if variant == current_variant %} selected="selected" {%- endif -%}
