@@ -175,7 +175,7 @@ $(window).on('load', function () {
     console.log(selectedValues);
     update_add_to_cart_text(found);
     update_variant_id(found.id);
-    update_slider_image(found.featured_image.id);
+    //update_slider_image(found.featured_image.id);
     update_product_price(found);
     updateMasterVariant(found);
     updateHistoryState(found);
@@ -199,7 +199,7 @@ $(window).on('load', function () {
     console.log(found.id);
     update_add_to_cart_text(found);
     update_variant_id(found.id);
-    update_slider_image(found.featured_image.id);
+    //update_slider_image(found.featured_image.id);
     update_product_price(found);
     updateMasterVariant(found);
   });
