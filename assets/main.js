@@ -159,22 +159,18 @@ $(window).on('load', function () {
     let selectedValues = getVariantFromSwatches();
     let variants = window.product.variants;
     let found = false;
-    console.log('arr', selectedValues);
     variants.forEach(function (variant) {
       let satisfied = true;
       let options = variant.options;
-      console.log(options);
       selectedValues.forEach(function (option) {
         if (satisfied) {
           satisfied = option.value === variant[option.index];
         }
-        console.log(variant[option.index]);
       });
       if (satisfied) {
         found = variant;
       }
     });
-    console.log(found.id);
     update_add_to_cart_text(found);
     update_variant_id(found.id);
     update_slider_image(found.featured_image.id);
