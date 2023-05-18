@@ -10,6 +10,9 @@ window.product.variants = [];
         {% if variant.compare_at_price != blank %}
             compare_at_price: {{ variant.compare_at_price }},
         {% endif %}
+        option1: '{{ variant.option1 }}',
+        option2: '{{ variant.option2 }}',
+        option3: '{{ variant.option3 }}',
         options: [
             {% for option in variant.options -%}
             //{
