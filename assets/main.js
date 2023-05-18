@@ -124,12 +124,13 @@ $(window).on('load', function () {
     $(".product-slider").slick("slickGoTo", slideIndex - 1);
   }
   function update_add_to_cart_text(variant) {
+    let addToCart = $('#addToCart');
     if (variant.available == false) {
-      $('#addToCart').attr("disabled", true);
-      $('#addToCart').text("Sold Out");
+      addToCart.attr("disabled", true);
+      addToCart.text("Sold Out");
     } else {
-      $('#addToCart').attr("disabled", false);
-      $('#addToCart').text("Add to Cart");
+      addToCart.attr("disabled", false);
+      addToCart.text("Add to Cart");
     }
   }
   function update_product_price(variant) {
