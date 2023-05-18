@@ -104,6 +104,7 @@ $(window).on('load', function () {
         found = variant;
       }
     });
+    change_active_stage();
     update_add_to_cart_text(found);
     update_variant_id(found.id);
     update_slider_image(found.featured_image.id);
