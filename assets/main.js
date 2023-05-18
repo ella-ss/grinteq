@@ -3,7 +3,7 @@
 $(window).on("load", function () {
   function isNumber(evt) {
     evt = evt ? evt : window.event;
-    var charCode = evt.which ? evt.which : evt.keyCode;
+    let charCode = evt.which ? evt.which : evt.keyCode;
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
       return false;
     }
@@ -12,7 +12,7 @@ $(window).on("load", function () {
   function getVariantFromOptions() {
     let variantArr = [];
     jQuery(".product-category .mgfox").map(function (i, el) {
-      var type = jQuery(this).attr("type");
+      let type = jQuery(this).attr("type");
       if (type === "radio" || type === "checkbox") {
         if ($(el).is(":checked")) {
           variantArr.push({
@@ -46,7 +46,7 @@ $(window).on("load", function () {
     if (!history.replaceState || !variant) {
       return;
     }
-    var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + "?variant=" + variant.id;
+    let newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + "?variant=" + variant.id;
     window.history.replaceState({
       path: newurl
     }, "", newurl);
@@ -54,15 +54,15 @@ $(window).on("load", function () {
 
   /**Money Format */
   theme.Currency = function () {
-    var moneyFormat = "${{amount}}"; // eslint-disable-line camelcase
+    let moneyFormat = "${{amount}}"; // eslint-disable-line camelcase
 
     function formatMoney(cents, format) {
       if (typeof cents === "string") {
         cents = cents.replace(".", "");
       }
-      var value = "";
-      var placeholderRegex = /\{\{\s*(\w+)\s*\}\}/;
-      var formatString = format || moneyFormat;
+      let value = "";
+      let placeholderRegex = /\{\{\s*(\w+)\s*\}\}/;
+      let formatString = format || moneyFormat;
       function formatWithDelimiters(number, precision, thousands, decimal) {
         thousands = thousands || ",";
         decimal = decimal || ".";
@@ -70,9 +70,9 @@ $(window).on("load", function () {
           return 0;
         }
         number = (number / 100.0).toFixed(precision);
-        var parts = number.split(".");
-        var dollarsAmount = parts[0].replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1" + thousands);
-        var centsAmount = parts[1] ? decimal + parts[1] : "";
+        let parts = number.split(".");
+        let dollarsAmount = parts[0].replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1" + thousands);
+        let centsAmount = parts[1] ? decimal + parts[1] : "";
         return dollarsAmount + centsAmount;
       }
       switch (formatString.match(placeholderRegex)[1]) {
@@ -113,11 +113,11 @@ $(window).on("load", function () {
     $("#variant_id").val(variant);
   }
   function update_slider_image(variantImg) {
-    var slideIndex = $("#" + variantImg).attr("data-index");
+    let slideIndex = $("#" + variantImg).attr("data-index");
     $(".product-slider").slick("slickGoTo", slideIndex - 1);
   }
   function get_sku(variant) {
-    var skuCode = variant.sku;
+    let skuCode = variant.sku;
     if (skuCode != "") {
       $("#product_sku").html("<span><strong>SKU: </strong>" + skuCode + "</span>");
     }
@@ -132,35 +132,35 @@ $(window).on("load", function () {
     }
   }
   function update_product_price(variant) {
-    var currency = theme.moneyFormat.substring(0, 1);
-    var regular_price = variant.price;
-    var compare_price = variant.compare_at_price;
-    var regular_price_output = '<span class="money regular_price" id="regular_price">' + theme.Currency.formatMoney(regular_price, theme.moneyFormat) + "</span>";
+    let currency = theme.moneyFormat.substring(0, 1);
+    let regular_price = variant.price;
+    let compare_price = variant.compare_at_price;
+    let regular_price_output = '<span class="money regular_price" id="regular_price">' + theme.Currency.formatMoney(regular_price, theme.moneyFormat) + "</span>";
     if (compare_price > regular_price) {
-      var compare_price_output = '<span class="money compare_price" id="compare_price"> ' + theme.Currency.formatMoney(compare_price, theme.moneyFormat) + "</span>";
-      var saved_price = Math.round(compare_price - regular_price);
-      var saved_price_output = '<span class="save_amount" id="save_amount"> Save up to ' + theme.Currency.formatMoney(saved_price, theme.moneyFormat) + "</span>";
+      let compare_price_output = '<span class="money compare_price" id="compare_price"> ' + theme.Currency.formatMoney(compare_price, theme.moneyFormat) + "</span>";
+      let saved_price = Math.round(compare_price - regular_price);
+      let saved_price_output = '<span class="save_amount" id="save_amount"> Save up to ' + theme.Currency.formatMoney(saved_price, theme.moneyFormat) + "</span>";
       output = regular_price_output + compare_price_output + saved_price_output;
     } else {
-      var compare_price_output = "";
-      var saved_price = "";
-      var saved_price_output = "";
+      let compare_price_output = "";
+      let saved_price = "";
+      let saved_price_output = "";
       output = regular_price_output + compare_price_output + saved_price_output;
     }
     $("#product_price").html(output);
     console.log(variant);
   }
   function updateMasterVariant(variant) {
-    var masterSelect = jQuery(".product-form__variants");
+    let masterSelect = jQuery(".product-form__variants");
     masterSelect.val(variant.id);
   }
   jQuery(".product-category .mgfox").on("change", function () {
-    var selectedValues = getVariantFromOptions();
-    var variants = window.product.variants;
-    var found = false;
+    let selectedValues = getVariantFromOptions();
+    let variants = window.product.variants;
+    let found = false;
     variants.forEach(function (variant) {
-      var satisfied = true;
-      var options = variant.options;
+      let satisfied = true;
+      let options = variant.options;
       selectedValues.forEach(function (option) {
         if (satisfied) {
           satisfied = option.value === variant[option.index];
@@ -181,12 +181,12 @@ $(window).on("load", function () {
   });
 
   // jQuery("input[type=radio]").on("change", function () {
-  //   var selectedValues = getVariantFromSwatches();
-  //   var variants = window.product.variants;
-  //   var found = false;
+  //   let selectedValues = getVariantFromSwatches();
+  //   let variants = window.product.variants;
+  //   let found = false;
   //   variants.forEach(function (variant) {
-  //     var satisfied = true;
-  //     var options = variant.options;
+  //     let satisfied = true;
+  //     let options = variant.options;
   //     selectedValues.forEach(function (option) {
   //       if (satisfied) {
   //         satisfied = option.value === variant[option.index];
