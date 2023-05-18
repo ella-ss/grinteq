@@ -3993,11 +3993,13 @@ select {
 }
 
 .slick-arrow {
-  width: 30px;
-  height: 30px;
   background: none;
   border: 0;
   cursor: pointer;
+}
+.slick-arrow svg {
+  width: 30px;
+  height: 30px;
 }
 
 .slick-arrow.next_btn {
