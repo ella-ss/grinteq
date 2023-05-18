@@ -96,7 +96,7 @@ $(window).on('load', function () {
   }
   function update_slider_image(variantImg) {
     let slideIndex = $('#' + variantImg).attr('data-index');
-    console.log(variantImg);
+    console.log(slideIndex);
     $('.product-slider').slick('slickGoTo', slideIndex - 1);
   }
   function update_product_price(variant) {
