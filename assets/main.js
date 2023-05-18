@@ -57,55 +57,6 @@ $(window).on('load', function () {
     }, "", newurl);
   }
 
-  // money format
-  theme.Currency = function () {
-    let moneyFormat = "${{amount}}";
-    function formatMoney(cents, format) {
-      if (typeof cents === "string") {
-        cents = cents.replace(".", "");
-      }
-      let value = "";
-      let placeholderRegex = /\{\{\s*(\w+)\s*\}\}/;
-      let formatString = format || moneyFormat;
-      function formatWithDelimiters(number, precision, thousands, decimal) {
-        thousands = thousands || ",";
-        decimal = decimal || ".";
-        if (isNaN(number) || number === null) {
-          return 0;
-        }
-        number = (number / 100.0).toFixed(precision);
-        let parts = number.split(".");
-        let dollarsAmount = parts[0].replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1" + thousands);
-        let centsAmount = parts[1] ? decimal + parts[1] : "";
-        return dollarsAmount + centsAmount;
-      }
-      switch (formatString.match(placeholderRegex)[1]) {
-        case "amount":
-          value = formatWithDelimiters(cents, 2);
-          break;
-        case "amount_no_decimals":
-          value = formatWithDelimiters(cents, 0);
-          break;
-        case "amount_with_comma_separator":
-          value = formatWithDelimiters(cents, 2, ".", ",");
-          break;
-        case "amount_no_decimals_with_comma_separator":
-          value = formatWithDelimiters(cents, 0, ".", ",");
-          break;
-        case "amount_no_decimals_with_space_separator":
-          value = formatWithDelimiters(cents, 0, " ");
-          break;
-        case "amount_with_apostrophe_separator":
-          value = formatWithDelimiters(cents, 2, "'");
-          break;
-      }
-      return formatString.replace(placeholderRegex, value);
-    }
-    return {
-      formatMoney: formatMoney
-    };
-  }();
-
   //plus btn
   $('.add').on('click', function () {
     $(this).prev().val(+$(this).prev().val() + 1);
@@ -133,24 +84,6 @@ $(window).on('load', function () {
       addToCart.text('Add to Cart');
     }
   }
-  function update_product_price(variant) {
-    let regular_price = variant.price;
-    let compare_price = variant.compare_at_price;
-    let regular_price_output = `<span class='money regular_price' id='regular_price'>` + theme.Currency.formatMoney(regular_price, theme.moneyFormat) + '</span>';
-    if (compare_price > regular_price) {
-      let compare_price_output = `<span class='money compare_price' id='compare_price'> ` + theme.Currency.formatMoney(compare_price, theme.moneyFormat) + '</span>';
-      let saved_price = Math.round(compare_price - regular_price);
-      let saved_price_output = `<span class='save_amount' id='save_amount'> Save up to ` + theme.Currency.formatMoney(saved_price, theme.moneyFormat) + '</span>';
-      output = regular_price_output + compare_price_output + saved_price_output;
-    } else {
-      let compare_price_output = "";
-      let saved_price = "";
-      let saved_price_output = "";
-      output = regular_price_output + compare_price_output + saved_price_output;
-    }
-    $("#product_price").html(output);
-    console.log(variant);
-  }
   function updateMasterVariant(variant) {
     let masterSelect = $('.product-form__variants');
     masterSelect.val(variant.id);
@@ -174,7 +107,6 @@ $(window).on('load', function () {
     update_add_to_cart_text(found);
     update_variant_id(found.id);
     update_slider_image(found.featured_image.id);
-    //update_product_price(found);
     updateMasterVariant(found);
     updateHistoryState(found);
   });
