@@ -20,7 +20,6 @@
     {% endif %}
 
     {% if product.compare_at_price > product.price %}
-        <!-- <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span> -->
         <span class="money compare_price" id="compare_price"><del>{{ product.compare_at_price | money }}</del></span>
     {% endif %}
 
