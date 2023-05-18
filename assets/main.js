@@ -1,4 +1,5 @@
 "use strict";
+"use strict";
 
 $(window).on('load', function () {
   // get an array with options of clicked variant (ie value: 'Black', index: 'option1')
