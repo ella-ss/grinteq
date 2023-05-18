@@ -115,7 +115,7 @@ $(window).on('load', function () {
       let saved_price_output = "";
       let output = regular_price_output + compare_price_output + saved_price_output;
     }
-    $('#product_price').html(output);
+    $('#product_price').html('ff');
     console.log(variant);
   }
   function update_add_to_cart_text(variant) {
@@ -153,7 +153,7 @@ $(window).on('load', function () {
     update_slider_image(found.featured_image.id);
     updateMasterVariant(found);
     updateHistoryState(found);
-    update_product_price(found.id);
+    update_product_price(found);
   });
   $('.product-slider').slick({
     slidesToShow: 1,
