@@ -11,7 +11,27 @@ $(window).on('load', function () {
   }
 
   //get an array with options of clicked variant (ie value: 'Black', index: 'option1')
-
+  function getVariantFromOptions() {
+    let variantArr = [];
+    $('.product-category .mgfox').map(function (i, el) {
+      let type = $(this).attr('type');
+      if (type === 'radio' || type === 'checkbox') {
+        if ($(el).is(':checked')) {
+          variantArr.push({
+            value: $(el).val(),
+            index: $(el).attr('data-index')
+          });
+        }
+      } else {
+        let variant = {
+          value: $(el).val(),
+          index: $(el).data('index')
+        };
+        variantArr.push(variant);
+      }
+    });
+    return variantArr;
+  }
   function getVariantFromSwatches() {
     let variantArr = [];
     $('.product-category input[type=radio]').map(function (i, el) {
@@ -136,6 +156,31 @@ $(window).on('load', function () {
     let masterSelect = $(".product-form__variants");
     masterSelect.val(variant.id);
   }
+  $(".product-category .mgfox").on("change", function () {
+    let selectedValues = getVariantFromOptions();
+    let variants = window.product.variants;
+    let found = false;
+    variants.forEach(function (variant) {
+      let satisfied = true;
+      let options = variant.options;
+      selectedValues.forEach(function (option) {
+        if (satisfied) {
+          satisfied = option.value === variant[option.index];
+        }
+      });
+      if (satisfied) {
+        found = variant;
+      }
+    });
+    console.log(selectedValues);
+    update_add_to_cart_text(found);
+    get_sku(found);
+    update_variant_id(found.id);
+    // update_slider_image(found.featured_image.id);
+    update_product_price(found);
+    updateMasterVariant(found);
+    updateHistoryState(found);
+  });
   $("input[type=radio]").on("change", function () {
     let selectedValues = getVariantFromSwatches();
     let variants = window.product.variants;
