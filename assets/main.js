@@ -36,14 +36,14 @@
         if (next_page != 1) {
           next_item = break_item + 1;
         }
-        break_item = next_item + load_data;
+        let break_item = next_item + load_data;
         console.log(next_item + ' == ' + load_data + '==' + next_page + '==' + break_item);
         $.ajax({
           method: 'GET',
           url: json_url,
           dataType: 'JSON',
           success: function (d, msg) {
-            var data = d.products;
+            let data = d.products;
             for (i = next_item; i < data.length; i++) {
               $this.append('<' + elements + ' class="product ' + i + '"><figure><a href="#"><img src="' + data[i].images[0].src + '>"</a><figcaption><h6><a href="/products/' + data[i].handle + '">' + data[i].title + '</a></h6><p>$' + data[i].variants[0].price + '</p></figcaption></figure>' + '</' + elements + '>');
               if (i == data.length - 1) {
