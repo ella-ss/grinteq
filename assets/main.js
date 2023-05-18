@@ -52,7 +52,7 @@ $(window).on("load", function () {
     }, "", newurl);
   }
 
-  /**Money Format */
+  /* Money Format */
   theme.Currency = function () {
     let moneyFormat = "${{amount}}"; // eslint-disable-line camelcase
 
