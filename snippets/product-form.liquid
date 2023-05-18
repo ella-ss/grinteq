@@ -7,12 +7,14 @@
                 {% if product_option.name == 'Color' or product_option.name == 'Size' or product_option.name == 'Material' %}
                     <span class="option_label">{{ product_option.name }}</span>
                     {% assign index = forloop.index %}
-                    {% for value in product_option.values %}
-                        <label>
-                            <input type="radio" class="form_action"  value="{{ value | escape }}" data-index="option{{ index }}" name="{{ product_option.name }}" {% if forloop.index == 1 %} checked {% endif %}/>
-                            <div class="front-end box metal_info" alt="{{ value }}">{{ value }}</div>
-                        </label>
-                    {% endfor %}
+                    <div class="options_wrap">
+                        {% for value in product_option.values %}
+                            <label>
+                                <input type="radio" class="form_action"  value="{{ value | escape }}" data-index="option{{ index }}" name="{{ product_option.name }}" {% if forloop.index == 1 %} checked {% endif %}/>
+                                <div class="front-end box metal_info" alt="{{ value }}">{{ value }}</div>
+                            </label>
+                        {% endfor %}
+                    </div>
                 {% else %}
                     <span class="option_label d-block">{{ product_option.name }}</span>
                     <select class="form-control form_action variant-option"  data-index="option{{ forloop.index }}">
