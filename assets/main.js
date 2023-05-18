@@ -10,7 +10,7 @@ $(window).on('load', function () {
     return true;
   }
 
-  //get an array with options of clicked variant (ie value: 'Black', index: 'option1')
+  // get an array with options of clicked variant (ie value: 'Black', index: 'option1')
   function getVariantFromOptions() {
     let variantArr = [];
     $('.product-category .mgfox').map(function (i, el) {
@@ -44,6 +44,8 @@ $(window).on('load', function () {
     });
     return variantArr;
   }
+
+  // update URL
   function updateHistoryState(variant) {
     if (!history.replaceState || !variant) {
       return;
@@ -54,7 +56,7 @@ $(window).on('load', function () {
     }, "", newurl);
   }
 
-  /* Money Format */
+  // money format
   theme.Currency = function () {
     let moneyFormat = "${{amount}}"; // eslint-disable-line camelcase
 
@@ -103,7 +105,7 @@ $(window).on('load', function () {
       formatMoney: formatMoney
     };
   }();
-  $(".add").on("click", function () {
+  $('.add').on("click", function () {
     $(this).prev().val(+$(this).prev().val() + 1);
   });
   $(".sub").on("click", function () {
