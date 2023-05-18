@@ -36,6 +36,8 @@ $(window).on('load', function () {
       if ($(this).next().val() > 1) $(this).next().val(+$(this).next().val() - 1);
     }
   });
+
+  //change class for swatch
   $('.swatch').click(function () {
     $('.swatch').removeClass('active');
     $(this).addClass('active');
