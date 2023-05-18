@@ -3957,8 +3957,5 @@ select {
   background: #ededed;
 }
 .swatch[data-name=Size].active {
-  position: relative;
-  top: -2px;
-  background: #e3e3e3;
-  border: 3px solid white;
+  background: #e5e5e5;
 }
