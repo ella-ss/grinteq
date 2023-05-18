@@ -181,7 +181,6 @@ $(window).on('load', function () {
   $('input[type=radio]').on('change', function () {
     let selectedValues = getVariantFromSwatches();
     let variants = window.product.variants;
-    console.log(variants);
     let found = false;
     variants.forEach(function (variant) {
       let satisfied = true;
@@ -191,6 +190,7 @@ $(window).on('load', function () {
         if (satisfied) {
           satisfied = option.value === variant[option.index];
         }
+        console.log(option.value);
       });
       if (satisfied) {
         found = variant;
