@@ -12,18 +12,18 @@ $(window).on('load', function () {
   function getVariantFromOptions() {
     let variantArr = [];
     $('.product-category .mgfox').map(function (i, el) {
-      let type = $(this).attr("type");
-      if (type === "radio" || type === "checkbox") {
-        if ($(el).is(":checked")) {
+      let type = $(this).attr('type');
+      if (type === 'radio' || type === 'checkbox') {
+        if ($(el).is(':checked')) {
           variantArr.push({
             value: $(el).val(),
-            index: $(el).attr("data-index")
+            index: $(el).attr('data-index')
           });
         }
       } else {
         let variant = {
           value: $(el).val(),
-          index: $(el).data("index")
+          index: $(el).data('index')
         };
         variantArr.push(variant);
       }
