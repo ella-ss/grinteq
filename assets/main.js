@@ -12,7 +12,7 @@ $(window).on('load', function () {
   function getVariantFromOptions() {
     let variantArr = [];
     $('.product-category .mgfox').map(function (i, el) {
-      let type = jQuery(this).attr("type");
+      let type = $(this).attr("type");
       if (type === "radio" || type === "checkbox") {
         if ($(el).is(":checked")) {
           variantArr.push({
@@ -151,10 +151,10 @@ $(window).on('load', function () {
     console.log(variant);
   }
   function updateMasterVariant(variant) {
-    let masterSelect = jQuery(".product-form__variants");
+    let masterSelect = $(".product-form__variants");
     masterSelect.val(variant.id);
   }
-  jQuery(".product-category .mgfox").on("change", function () {
+  $(".product-category .mgfox").on("change", function () {
     let selectedValues = getVariantFromOptions();
     let variants = window.product.variants;
     let found = false;
@@ -179,7 +179,7 @@ $(window).on('load', function () {
     updateMasterVariant(found);
     updateHistoryState(found);
   });
-  jQuery("input[type=radio]").on("change", function () {
+  $("input[type=radio]").on("change", function () {
     let selectedValues = getVariantFromSwatches();
     let variants = window.product.variants;
     let found = false;
