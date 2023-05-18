@@ -30,8 +30,7 @@
     {% if product.available == true %}
         <span class="save_amount" id="save_amount">{% if product.compare_at_price > product.price %}
           {% assign saving = product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price | round %}
-          {% assign percentage = saving | at_least: percentage %}
-          Save up to {{ percentage }}%
+          Save up to {{ saving }}
           {% endif %}</span>
     {% endif %}
 
