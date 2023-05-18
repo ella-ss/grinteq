@@ -9,6 +9,8 @@ $(window).on('load', function () {
     }
     return true;
   }
+
+  //get variant
   function getVariantFromOptions() {
     let variantArr = [];
     $('.product-category .mgfox').map(function (i, el) {
@@ -28,6 +30,7 @@ $(window).on('load', function () {
         variantArr.push(variant);
       }
     });
+    console.log(variantArr);
     return variantArr;
   }
   function getVariantFromSwatches() {
