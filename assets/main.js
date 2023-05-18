@@ -28,8 +28,7 @@ $(window).on('load', function () {
 
   /* Money Format */
   theme.Currency = function () {
-    let moneyFormat = "${{amount}}"; // eslint-disable-line camelcase
-
+    let moneyFormat = "${{amount}}";
     function formatMoney(cents, format) {
       if (typeof cents === "string") {
         cents = cents.replace(".", "");
