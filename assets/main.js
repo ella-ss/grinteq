@@ -8,14 +8,13 @@
       var per_page = typeof options.per_page === 'undefined' ? 3 : options.per_page - 1;
       var load_data = typeof options.load_data === 'undefined' ? 3 : options.load_data - 1;
       var json_url = typeof options.json_url === 'undefined' ? '' : options.json_url;
-      var shopify = typeof options.shopify === 'undefined' ? false : options.shopify;
       $($this).after('<button id="btn" class="load-btn btn large" data-page="1">View More</button>');
       $.ajax({
         method: 'GET',
         url: json_url,
         dataType: 'JSON',
         success: function (d, msg) {
-          var data = d.products;
+          let data = d.products;
           console.log(data);
           $(data).each(function (index) {
             $this.append('<' + elements + ' class="product ' + index + '"><figure><a href="#"><img src="' + this.images[0].src + '>"</a><figcaption><h6><a href="/products/' + this.handle + '">' + this.title + '</a></h6><p>$' + this.variants[0].price + '</p></figcaption></figure>' + '</' + elements + '>');
