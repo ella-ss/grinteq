@@ -133,7 +133,6 @@ $(window).on('load', function () {
     }
   }
   function update_product_price(variant) {
-    let currency = theme.moneyFormat.substring(0, 1);
     let regular_price = variant.price;
     let compare_price = variant.compare_at_price;
     let regular_price_output = `<span class='money regular_price' id='regular_price'>` + theme.Currency.formatMoney(regular_price, theme.moneyFormat) + '</span>';
