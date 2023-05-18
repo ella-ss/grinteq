@@ -3934,5 +3934,7 @@ select {
 }
 
 .swatch[data-name=Color] {
-  text-indent: -9999px;
+  width: 20px;
+  height: 20px;
+  border-radius: 100px;
 }
