@@ -3949,3 +3949,19 @@ select {
   box-shadow: 0 0 0 1px #040404;
   border: 3px solid white;
 }
+
+.swatch[data-name=Size] {
+  width: -moz-max-content;
+  width: max-content;
+  padding: 5px 15px;
+  background: #040404;
+  color: white;
+}
+.swatch[data-name=Size].active {
+  position: relative;
+  top: -2px;
+  width: 32px;
+  height: 32px;
+  box-shadow: 0 0 0 1px #040404;
+  border: 3px solid white;
+}
