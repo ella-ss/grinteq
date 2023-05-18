@@ -3954,7 +3954,7 @@ select {
   width: 55px;
   padding: 5px 15px;
   text-align: center;
-  background: #e3e3e3;
+  background: #ededed;
 }
 .swatch[data-name=Size].active {
   position: relative;
