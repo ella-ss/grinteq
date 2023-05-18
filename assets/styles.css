@@ -4009,3 +4009,11 @@ select {
 .slick-arrow.next_btn {
   transform: rotate(180deg);
 }
+
+@media all and (max-width: 768px) {
+  .product-slider_arrows {
+    position: absolute;
+    left: calc(50% - 100px);
+    bottom: 19%;
+  }
+}
