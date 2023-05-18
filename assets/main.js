@@ -176,7 +176,7 @@ $(window).on('load', function () {
     update_add_to_cart_text(found);
     update_variant_id(found.id);
     //update_slider_image(found.featured_image.id);
-    //update_product_price(found);
+    update_product_price(found);
     updateMasterVariant(found);
     updateHistoryState(found);
   });
@@ -203,7 +203,7 @@ $(window).on('load', function () {
     update_add_to_cart_text(found);
     update_variant_id(found.id);
     //update_slider_image(found.featured_image.id);
-    //update_product_price(found);
+    update_product_price(found);
     updateMasterVariant(found);
   });
   $(".product-slider").slick({
