@@ -151,7 +151,7 @@ $(window).on('load', function () {
     updateMasterVariant(found);
     updateHistoryState(found);
     update_product_price(found);
-    console.log(found.featured_image.id);
+    console.log(found);
   });
   $('.product-slider').slick({
     slidesToShow: 1,
