@@ -10,6 +10,9 @@ window.product.variants = [];
         compare_at_price: {{ variant.compare_at_price }},
         options: [],
     })
+    {% for option in variant.options -%}
+            window.product.variant[{{ forloop.index0 }}].options.push({{ option }})
+    {%- endfor %}
 {% endfor %}
 </script>
 <section data-section-id="{{ section.id }}" data-section-type="product" class="section-padding mt-5">
