@@ -110,7 +110,7 @@ $(window).on('load', function () {
     updateMasterVariant(found);
     updateHistoryState(found);
   });
-  $(".product-slider").slick({
+  $('.product-slider').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
