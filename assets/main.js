@@ -30,6 +30,7 @@ $(window).on('load', function () {
         variantArr.push(variant);
       }
     });
+    console.log(variantArr);
     return variantArr;
   }
   function getVariantFromSwatches() {
