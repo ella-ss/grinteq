@@ -37,7 +37,7 @@
                             {% assign index = index | plus: 1 %}
                             <div data-index="{{ index }}" id="{{ image.id }}">
                                 <a href="{{ image.src | img_url: '480x480' }}" data-thumbnail-id="{{ image.id }}" data-product-single-thumbnail{% if featured_image == image %} aria-current="true"{% endif %}>
-                                    <img src="{{ image.src | img_url: '800x600', crop:'center' }}" alt="{{ image.alt | escape }}">
+                                    <img src="{{ image.src | img_url: '600x600', crop:'center' }}" alt="{{ image.alt | escape }}">
                                 </a>
                             </div>
                         {% endfor %}
@@ -47,7 +47,7 @@
                 <div class="product-slider-nav mt-4">
                     {% if product.images.size > 1 %}
                         {% for image in product.images %}
-                            <img class="px-3" width="50" src="{{ image.src | img_url: '200x150', crop:'center' }}" alt="{{ image.alt | escape }}">
+                            <img class="px-3" width="50" src="{{ image.src | img_url: '200x200', crop:'center' }}" alt="{{ image.alt | escape }}">
                         {% endfor %}
                     {% endif %}
                 </div>
