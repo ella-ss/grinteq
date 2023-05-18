@@ -103,6 +103,8 @@ $(window).on('load', function () {
   function update_product_price(variant) {
     let regular_price = variant.price;
     let compare_price = variant.compare_at_price;
+    console.log(regular_price);
+    console.log(compare_price);
     let regular_price_output = '<span class="money regular_price" id="regular_price">' + theme.Currency.formatMoney(regular_price, theme.moneyFormat) + "</span>";
     if (compare_price > regular_price) {
       let compare_price_output = '<span class="money compare_price" id="compare_price"> ' + theme.Currency.formatMoney(compare_price, theme.moneyFormat) + "</span>";
