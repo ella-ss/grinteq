@@ -176,6 +176,7 @@ $(window).on('load', function () {
     update_slider_image(found.featured_image.id);
     //update_product_price(found);
     updateMasterVariant(found);
+    updateHistoryState(found);
   });
   $(".product-slider").slick({
     slidesToShow: 1,
