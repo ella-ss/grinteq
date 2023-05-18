@@ -123,12 +123,6 @@ $(window).on('load', function () {
     let slideIndex = $('#' + variantImg).attr('data-index');
     $(".product-slider").slick("slickGoTo", slideIndex - 1);
   }
-  function get_sku(variant) {
-    let skuCode = variant.sku;
-    if (skuCode != "") {
-      $("#product_sku").html("<span><strong>SKU: </strong>" + skuCode + "</span>");
-    }
-  }
   function update_add_to_cart_text(variant) {
     if (variant.available == false) {
       $("#addToCart").attr("disabled", true);
@@ -179,7 +173,6 @@ $(window).on('load', function () {
     });
     console.log(selectedValues);
     update_add_to_cart_text(found);
-    get_sku(found);
     update_variant_id(found.id);
     // update_slider_image(found.featured_image.id);
     update_product_price(found);
@@ -204,7 +197,6 @@ $(window).on('load', function () {
     });
     console.log(found.id);
     update_add_to_cart_text(found);
-    get_sku(found);
     update_variant_id(found.id);
     update_slider_image(found.featured_image.id);
     update_product_price(found);
