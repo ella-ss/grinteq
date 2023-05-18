@@ -30,7 +30,6 @@ $(window).on('load', function () {
         variantArr.push(variant);
       }
     });
-    console.log(variantArr);
     return variantArr;
   }
   function getVariantFromSwatches() {
@@ -43,7 +42,6 @@ $(window).on('load', function () {
         });
       }
     });
-    console.log(variantArr);
     return variantArr;
   }
   function updateHistoryState(variant) {
