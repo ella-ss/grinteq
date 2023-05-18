@@ -49,9 +49,11 @@
   </head>
 
   <body class="gradient">
-    <div class="page-width">
-      <a class="btn" href="/products/t-shirt">Product Page</a>
-    </div>
+    {% if template.name == 'index' %}
+      <div class="page-width">
+        <a class="btn" href="/products/t-shirt">Product Page</a>
+      </div>
+    {% endif %}
     <main
       id="MainContent"
       class="content-for-layout focus-none"
