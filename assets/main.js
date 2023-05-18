@@ -3,11 +3,11 @@
 (function ($) {
   $.fn.kp_load_more = function (options) {
     return $(this).each(function (e) {
-      var $this = $(this);
-      var elements = typeof options.elements === 'undefined' ? false : options.elements;
-      var per_page = typeof options.per_page === 'undefined' ? 3 : options.per_page - 1;
-      var load_data = typeof options.load_data === 'undefined' ? 3 : options.load_data - 1;
-      var json_url = typeof options.json_url === 'undefined' ? '' : options.json_url;
+      let $this = $(this);
+      let elements = typeof options.elements === 'undefined' ? false : options.elements;
+      let per_page = typeof options.per_page === 'undefined' ? 3 : options.per_page - 1;
+      let load_data = typeof options.load_data === 'undefined' ? 3 : options.load_data - 1;
+      let json_url = typeof options.json_url === 'undefined' ? '' : options.json_url;
       $($this).after('<button id="btn" class="load-btn btn large" data-page="1">View More</button>');
       $.ajax({
         method: 'GET',
@@ -27,7 +27,7 @@
           alert(msg.statusText);
         }
       });
-      var next_item = '';
+      let next_item = '';
       $(document).on('click', '.load-btn', function () {
         let next_page = parseInt($(this).attr('data-page'));
         $(this).attr('data-page', next_page + 1);
