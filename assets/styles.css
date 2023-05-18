@@ -3970,8 +3970,16 @@ select {
 }
 
 .qty_button {
-  border: 0;
-  background: #d0d0d0;
   width: 37px;
   height: 37px;
+  border: 0;
+  background: #d0d0d0;
+}
+
+.input_qty {
+  width: 60px;
+  height: 37px;
+  border: 0;
+  background: #ededed;
+  text-align: center;
 }
