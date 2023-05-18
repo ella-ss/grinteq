@@ -124,6 +124,10 @@ img {
   justify-content: center;
 }
 
+.a-center {
+  align-items: center;
+}
+
 .j-between {
   justify-content: space-between;
 }
