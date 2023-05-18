@@ -19,7 +19,7 @@
                         {% for value in product_option.values %}
                             <label>
                                 <input type="radio" class="form_action d-none" value="{{ value | escape }}" data-index="option{{ index }}" name="{{ product_option.name }}" {% if forloop.index == 1 %} checked {% endif %}/>
-                                <span class="d-block swatch swatch_info mr-1 background-{{ value | handleize }}" data-value="{{ value }}" data-name="{{ product_option.name }}">{% unless product_option.name == 'Color'%}{{ value }}{% endunless %}</span>
+                                <span class="d-block swatch swatch_info mr-2 background-{{ value | handleize }}" data-value="{{ value }}" data-name="{{ product_option.name }}">{% unless product_option.name == 'Color'%}{{ value }}{% endunless %}</span>
                             </label>
                         {% endfor %}
                     </div>
