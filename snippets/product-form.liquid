@@ -13,7 +13,7 @@
             <div class="product-option js-single-product-option-{{ option-name }} single-product-option-{{ option-name }} mb-3"
                  id="SingleOptionSelector-{{ forloop.index0 }}">
                 {% if product_option.name == 'Color' or product_option.name == 'Size' or product_option.name == 'Material' %}
-                    <span class="option_label">{{ product_option.name }}</span>
+                    <span class="option_label mb-2">{{ product_option.name }}</span>
                     {% assign index = forloop.index %}
                     <div class="options_wrap d-flex">
                         {% for value in product_option.values %}
