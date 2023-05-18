@@ -3936,7 +3936,6 @@ select {
 .swatch {
   cursor: pointer;
 }
-
 .swatch[data-name=Color] {
   width: 30px;
   height: 30px;
