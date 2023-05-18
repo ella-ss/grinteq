@@ -3724,30 +3724,6 @@ img {
   width: 100%;
 }
 
-.spacing-top-s {
-  margin-top: 10px;
-}
-
-.spacing-top-m {
-  margin-top: 20px;
-}
-
-.spacing-top-l {
-  margin-top: 50px;
-}
-
-.spacing-bottom-s {
-  margin-bottom: 10px;
-}
-
-.spacing-bottom-m {
-  margin-bottom: 20px;
-}
-
-.spacing-bottom-l {
-  margin-bottom: 50px;
-}
-
 h1, .h1,
 h2, .h2,
 h3, .h3 {
