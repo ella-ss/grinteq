@@ -13,7 +13,7 @@ window.product.variants = [];
         options: [],
     })
     {% for option in variant.options -%}
-            window.product.variant[{{ forloop.index0 }}].options.push('{{ option }}');
+            window.product.variants[{{ forloop.index0 }}].options.push('{{ option }}');
     {%- endfor %}
 {% endfor %}
 
