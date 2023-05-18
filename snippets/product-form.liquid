@@ -14,7 +14,7 @@
                         </label>
                     {% endfor %}
                 {% else %}
-                    <span class="option_label">{{ product_option.name }}</span>
+                    <span class="option_label d-block">{{ product_option.name }}</span>
                     <select class="form-control form_action variant-option"  data-index="option{{ forloop.index }}">
                         {% for value in product_option.values %}
                             <option value="{{ value | escape }}" {% if product_option.selected.value == value %} selected {% endif %}>{{ value }}</option>
