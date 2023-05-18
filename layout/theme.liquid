@@ -65,6 +65,10 @@
       {{ content_for_layout }}
     </main>
 
+    <script>
+      var theme = window.theme || {};
+    </script>
+
     <script src="{{ 'main.min.js' | asset_url }}"></script>
 
     <script>
