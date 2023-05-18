@@ -10,7 +10,7 @@ $(window).on('load', function () {
     return true;
   }
 
-  //get variant
+  //get an array with options of clicked variant (ie )
   function getVariantFromOptions() {
     let variantArr = [];
     $('.product-category .mgfox').map(function (i, el) {
