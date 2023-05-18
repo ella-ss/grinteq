@@ -36,7 +36,7 @@
                 {% include 'product-price' %}
                 {% include 'product-form' %}
 
-                <div class="rte product_description">
+                <div class="rte product_description mt-2">
                     {% if section.settings.short_description %}
                         {{ product.description | truncate: 250 }}
                     {% else %}
