@@ -30,7 +30,7 @@
       });
       var next_item = '';
       $(document).on('click', '.load-btn', function () {
-        next_page = parseInt($(this).attr('data-page'));
+        let next_page = parseInt($(this).attr('data-page'));
         $(this).attr('data-page', next_page + 1);
         next_item = per_page + 1;
         if (next_page != 1) {
