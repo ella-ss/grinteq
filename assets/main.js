@@ -10,7 +10,7 @@ $(window).on('load', function () {
     return true;
   }
 
-  //get an array with options of clicked variant (ie value: 'Black')
+  //get an array with options of clicked variant (ie value: 'Black', index: 'option1')
   function getVariantFromOptions() {
     let variantArr = [];
     $('.product-category .mgfox').map(function (i, el) {
@@ -30,7 +30,6 @@ $(window).on('load', function () {
         variantArr.push(variant);
       }
     });
-    console.log(variantArr);
     return variantArr;
   }
   function getVariantFromSwatches() {
