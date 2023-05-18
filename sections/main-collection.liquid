@@ -6,7 +6,6 @@ if template contains 'collection' and collection.all_tags.size > 1
 {% endcomment %}
 
 {% if collection.all_tags.size > 1 %}
-
     {% assign c = 0 %}
     {% for t in collection.all_tags %}
         {% capture cat %}{{ cat }}{% capture temp_cat %}{% if t contains '__' %}{% assign cat_grp = t | split: '__' %}{{ cat_grp.first }}{% endif %}{% endcapture %}{% unless cat contains temp_cat %}{% if t contains '__' %}{% assign new_cat_grp = t | split: '__' %}{{ new_cat_grp.first }}{% endif %}{% unless forloop.last %}+{% endunless %}{% assign c = c | plus: 1 %}{% endunless %}{% endcapture %}
