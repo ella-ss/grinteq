@@ -21,7 +21,7 @@ $(window).on("load", function () {
           });
         }
       } else {
-        variant = {
+        let variant = {
           value: $(el).val(),
           index: $(el).data("index")
         };
