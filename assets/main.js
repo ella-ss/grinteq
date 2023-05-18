@@ -112,7 +112,6 @@ $(window).on('load', function () {
       $('#product_price').html(output);
     } else {
       let compare_price_output = "";
-      let saved_price = "";
       let saved_price_output = "";
       let output = regular_price_output + compare_price_output + saved_price_output;
       $('#product_price').html(output);
