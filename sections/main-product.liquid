@@ -52,7 +52,7 @@
                     </div>
                 </div>
 
-                <div class="product-slider-nav mt-4">
+                <div class="product-slider_nav mt-2">
                     {% if product.images.size > 1 %}
                         {% for image in product.images %}
                             <img class="px-3" width="50" src="{{ image.src | img_url: '200x200', crop:'center' }}" alt="{{ image.alt | escape }}">
