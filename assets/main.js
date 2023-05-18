@@ -155,31 +155,6 @@ $(window).on('load', function () {
     let masterSelect = $('.product-form__variants');
     masterSelect.val(variant.id);
   }
-  $('.product-category .form_action').on('change', function () {
-    let selectedValues = getVariantFromOptions();
-    let variants = window.product.variants;
-    let found = false;
-    console.log(selectedValues);
-    variants.forEach(function (variant) {
-      let satisfied = true;
-      let options = variant.options;
-      selectedValues.forEach(function (option) {
-        if (satisfied) {
-          satisfied = option.value === variant[option.index];
-        }
-      });
-      if (satisfied) {
-        found = variant;
-      }
-    });
-    console.log(selectedValues);
-    update_add_to_cart_text(found);
-    update_variant_id(found.id);
-    //update_slider_image(found.featured_image.id);
-    update_product_price(found);
-    updateMasterVariant(found);
-    updateHistoryState(found);
-  });
   $('input[type=radio]').on('change', function () {
     let selectedValues = getVariantFromSwatches();
     let variants = window.product.variants;
