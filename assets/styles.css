@@ -3952,7 +3952,7 @@ select {
 
 .swatch[data-name=Size] {
   width: 55px;
-  padding: 5px 15px;
+  padding: 5px;
   text-align: center;
   background: #ededed;
 }
