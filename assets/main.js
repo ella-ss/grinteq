@@ -118,7 +118,6 @@ $(window).on('load', function () {
   });
   function update_variant_id(variant) {
     $('#variant_id').val(variant);
-    console.log(variant);
   }
   function update_slider_image(variantImg) {
     let slideIndex = $("#" + variantImg).attr("data-index");
