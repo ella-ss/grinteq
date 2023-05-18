@@ -41,59 +41,8 @@
                         {{ product.description }}
                     {% endif %}
                 </div>
-
             </div> <!-- / col -->
         </div> <!-- / row -->
-
-        {% if section.settings.product_description %}
-
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="product__meta__tabs">
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#product_desc" role="tab" data-toggle="tab">Description</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#specifications" role="tab" data-toggle="tab">Specifications</a>
-                            </li>
-                            {% if section.settings.product_review %}
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#product_review" role="tab" data-toggle="tab">Review</a>
-                                </li>
-                            {% endif %}
-                        </ul>
-
-                        <!-- Tab panes -->
-                        <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane active" id="product_desc">
-                                {{ product.description }}
-                            </div>
-                            <div role="tabpanel" class="tab-pane fade" id="specifications">
-                                {% unless product.has_only_default_variant %}
-                                    {% for product_option in product.options_with_values %}
-                                        <div class="product_specifications">
-                                            <h4 class="h4">{{ product_option.name }}</h4>
-                                                <ul>
-                                                    {% for value in product_option.values %}
-                                                        <li >{{ value }}</li>
-                                                    {% endfor %}
-                                                </ul>
-                                        </div>
-                                    {% endfor %}
-                                {% endunless %}
-                            </div>
-                            {% if section.settings.product_review %}
-                                <div role="tabpanel" class="tab-pane fade" id="product_review">
-                                    <p>Add product review app code here</p>
-                                </div>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        {% endif %}
     </div>
 
 </section>
