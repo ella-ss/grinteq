@@ -118,7 +118,7 @@ $(window).on('load', function () {
     cssEase: "linear",
     asNavFor: ".product-slider-nav"
   });
-  $(".product-slider-nav").slick({
+  $('.product-slider-nav').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
     asNavFor: ".product-slider",
