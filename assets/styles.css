@@ -3935,6 +3935,7 @@ select {
 
 .regular_price {
   color: #ED3B30;
+  font-weight: 600;
 }
 
 .swatch {
