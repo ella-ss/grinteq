@@ -47,6 +47,7 @@ $(window).on('load', function () {
   }
   function update_slider_image(variantImg) {
     let slideIndex = $('#' + variantImg).attr('data-index');
+    console.log(variantImg);
     $('.product-slider').slick('slickGoTo', slideIndex - 1);
   }
   function update_add_to_cart_text(variant) {
