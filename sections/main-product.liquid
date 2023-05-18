@@ -30,6 +30,14 @@
                 {%- assign current_variant = product.selected_or_first_available_variant -%}
                 {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
 
+                <div class="product-slider_arrows d-flex justify-content-between">
+                    <div class="prev_btn">
+                        {% include 'slider-arrow' %}
+                    </div>
+                    <div class="next_btn">
+                        {% include 'slider-arrow' %}
+                    </div>
+                </div>
                 <div class="product-slider">
                     {% if product.images.size > 0 %}
                         {% assign index = 0 %}
@@ -42,14 +50,6 @@
                             </div>
                         {% endfor %}
                     {% endif %}
-                </div>
-                <div class="product-slider_arrows d-flex justify-content-between">
-                    <div class="prev_btn">
-                        {% include 'slider-arrow' %}
-                    </div>
-                    <div class="next_btn">
-                        {% include 'slider-arrow' %}
-                    </div>
                 </div>
 
                 <div class="product-slider_nav mt-2">
