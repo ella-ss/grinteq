@@ -16,10 +16,6 @@ window.product.variants = [];
         option3: '{{ variant.option3 }}',
         options: [
             {% for option in variant.options -%}
-            //{
-                //index: {{ forloop.index0 }},
-                //value: '{{ option }}'
-            //}{% unless forloop.last %}//,{% endunless %}
                 '{{ option }}'{% unless forloop.last %},{% endunless %}
             {%- endfor %}
         ],
