@@ -101,7 +101,7 @@ $(window).on('load', function () {
     $('.product-slider').slick('slickGoTo', slideIndex - 1);
   }
   function update_product_price(variant) {
-    let currency = theme.moneyFormat.substring(0, 1);
+    //let currency = theme.moneyFormat.substring(0, 1);
     let regular_price = variant.price;
     let compare_price = variant.compare_at_price;
     let regular_price_output = '<span class="money regular_price" id="regular_price">' + theme.Currency.formatMoney(regular_price, theme.moneyFormat) + "</span>";
@@ -116,7 +116,7 @@ $(window).on('load', function () {
       let saved_price_output = "";
       output = regular_price_output + compare_price_output + saved_price_output;
     }
-    $("#product_price").html(output);
+    $('#product_price').html(output);
     console.log(variant);
   }
   function update_add_to_cart_text(variant) {
@@ -154,6 +154,7 @@ $(window).on('load', function () {
     update_slider_image(found.featured_image.id);
     updateMasterVariant(found);
     updateHistoryState(found);
+    update_product_price(found);
   });
   $('.product-slider').slick({
     slidesToShow: 1,
