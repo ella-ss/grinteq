@@ -3936,16 +3936,16 @@ select {
 .swatch {
   cursor: pointer;
 }
-.swatch.active {
+
+.swatch[data-name=Color] {
+  width: 30px;
+  height: 30px;
+}
+.swatch[data-name=Color].active {
   position: relative;
   top: -2px;
   width: 32px;
   height: 32px;
   box-shadow: 0 0 0 0.5px #696969;
   border: 3px solid white;
-}
-
-.swatch[data-name=Color] {
-  width: 30px;
-  height: 30px;
 }
