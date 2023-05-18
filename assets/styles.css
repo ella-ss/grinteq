@@ -3989,7 +3989,6 @@ select {
   position: absolute;
   bottom: 10%;
   width: 200px;
-  z-index: 1;
 }
 
 .slick-arrow {
