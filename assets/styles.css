@@ -77,6 +77,16 @@ img {
   width: 100%;
 }
 
+.page-width {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .page-width {
+    padding: 0 5rem;
+  }
+}
 .checkbox {
   cursor: pointer;
   position: relative;
@@ -156,16 +166,6 @@ img {
   margin-bottom: 50px;
 }
 
-.page-width {
-  max-width: 120rem;
-  margin: 0 auto;
-}
-
-@media screen and (min-width: 768px) {
-  .page-width {
-    padding: 0 5rem;
-  }
-}
 h1, .h1,
 h2, .h2,
 h3, .h3 {
