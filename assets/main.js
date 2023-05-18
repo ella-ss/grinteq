@@ -13,7 +13,7 @@ $(window).on('load', function () {
   // get an array with options of clicked variant (ie value: 'Black', index: 'option1')
   function getVariantFromOptions() {
     let variantArr = [];
-    $('.product-category .mgfox').map(function (i, el) {
+    $('.product-category .form_action').map(function (i, el) {
       let type = $(this).attr('type');
       if (type === 'radio' || type === 'checkbox') {
         if ($(el).is(':checked')) {
@@ -155,7 +155,7 @@ $(window).on('load', function () {
     let masterSelect = $(".product-form__variants");
     masterSelect.val(variant.id);
   }
-  $(".product-category .mgfox").on("change", function () {
+  $(".product-category .form_action").on("change", function () {
     let selectedValues = getVariantFromOptions();
     let variants = window.product.variants;
     let found = false;
