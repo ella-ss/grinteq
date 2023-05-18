@@ -3950,7 +3950,8 @@ select {
   border: 3px solid white;
 }
 
-.swatch[data-name=Size] {
+.swatch[data-name=Size],
+.swatch[data-name=Material] {
   width: -moz-max-content;
   width: max-content;
   min-width: 45px;
@@ -3958,6 +3959,7 @@ select {
   text-align: center;
   background: #ededed;
 }
-.swatch[data-name=Size].active {
+.swatch[data-name=Size].active,
+.swatch[data-name=Material].active {
   background: #d0d0d0;
 }
