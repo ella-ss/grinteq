@@ -1,7 +1,5 @@
 <div class="product-price mb-2" id="product_price">
-
     {% if product.compare_at_price > product.price %}
-
         {% if product.price_varies %}
             {%- assign sale_price = product.price | money -%}
             <span class="money regular_price" id="regular_price">  {{ sale_price }}</span>
@@ -23,7 +21,7 @@
 
     {% if product.compare_at_price > product.price %}
         <!-- <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span> -->
-        <span class="money compare_price" id="compare_price">{{ product.compare_at_price | money }}</span>
+        <span class="money compare_price" id="compare_price"><del>{{ product.compare_at_price | money }}</del></span>
     {% endif %}
 
     {% unless product.available %}
@@ -31,7 +29,6 @@
     {% endunless %}
 
     {% if product.available == true %}
-
         <span class="save_amount" id="save_amount">{% if product.compare_at_price > product.price %}
           {% assign saving = product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price | round %}
           {% assign percentage = saving | at_least: percentage %}
