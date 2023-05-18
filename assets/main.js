@@ -34,11 +34,11 @@ $(window).on('load', function () {
   }
   function getVariantFromSwatches() {
     let variantArr = [];
-    $(".product-category input[type=radio]").map(function (i, el) {
-      if ($(el).is(":checked")) {
+    $('.product-category input[type=radio]').map(function (i, el) {
+      if ($(el).is(':checked')) {
         variantArr.push({
           value: $(el).val(),
-          index: $(el).attr("data-index")
+          index: $(el).attr('data-index')
         });
       }
     });
