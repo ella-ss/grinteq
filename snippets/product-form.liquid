@@ -24,7 +24,7 @@
             </div>
         {% endfor %}
     {% endunless %}
-    <input type="hidden" name="id"  id="variant_id" value="{{ product.selected_or_first_available_variant.id }}"  class="form-control">
+    <input type="hidden" name="id"  id="variant_id" value="{{ product.selected_or_first_available_variant.id }}" class="form-control">
 
     <select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js">
         {% for variant in product.variants %}
