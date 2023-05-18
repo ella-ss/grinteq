@@ -64,15 +64,14 @@
                             class="btn single-product__add-to-cart"
                             name="add"
                             data-add-to-cart
-
                             {% unless current_variant.available %}disabled="disabled"{% endunless %}>
-                      <span data-add-to-cart-text>
-                        {% if current_variant.available %}
-                            {{ 'products.product.add_to_cart' | t }}
-                        {% else %}
-                            {{ 'products.product.sold_out' | t }}
-                        {% endif %}
-                     </span>
+                            <span data-add-to-cart-text>
+                                {% if current_variant.available %}
+                                    {{ 'products.product.add_to_cart' | t }}
+                                {% else %}
+                                    {{ 'products.product.sold_out' | t }}
+                                {% endif %}
+                            </span>
                     </button>
                 </div>
             </div>
