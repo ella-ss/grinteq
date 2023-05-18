@@ -49,15 +49,15 @@
     <div class="qty-cart-container">
         <div class="form-group">
             <div class="row">
-                <div class="col-md-6">
-                    <label for="Quantity" class="form-label">Quantity</label>
+                <div class="col-md-12">
+                    <label for="Quantity" class="form-label mb-2">Quantity</label>
                     <div id="product_quantity">
                         <button type="button" id="sub" class="sub qty_button"> - </button>
                         <input type="text" v-model="form.quantity" id="Quantity" name="quantity" value="1" min="1"  class="input_qty">
                         <button type="button" id="add" class="add qty_button"> + </button>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <button
                             type="submit"
                             id="addToCart"
