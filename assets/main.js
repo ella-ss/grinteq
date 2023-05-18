@@ -39,7 +39,7 @@ $(window).on('load', function () {
 
   //change class for swatch
   $('.swatch').click(function () {
-    $('.swatch').removeClass('active');
+    $(this).closest('.options_wrap').find('.swatch').removeClass('active');
     $(this).addClass('active');
   });
   function update_variant_id(variant) {
