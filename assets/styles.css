@@ -3974,6 +3974,7 @@ select {
   height: 37px;
   border: 0;
   background: #ededed;
+  cursor: pointer;
 }
 
 .input_qty {
