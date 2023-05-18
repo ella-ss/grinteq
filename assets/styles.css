@@ -124,15 +124,15 @@ img {
 }
 
 .spacing-bottom-s {
-  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .spacing-bottom-m {
-  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .spacing-bottom-l {
-  padding-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .page-width {
