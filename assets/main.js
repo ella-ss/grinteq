@@ -120,7 +120,7 @@ $(window).on('load', function () {
     $('#variant_id').val(variant);
   }
   function update_slider_image(variantImg) {
-    let slideIndex = $("#" + variantImg).attr("data-index");
+    let slideIndex = $('#' + variantImg).attr('data-index');
     $(".product-slider").slick("slickGoTo", slideIndex - 1);
   }
   function get_sku(variant) {
