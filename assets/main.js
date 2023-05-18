@@ -1,6 +1,6 @@
 "use strict";
 
-$(window).on("load", function () {
+$(window).on('load', function () {
   function isNumber(evt) {
     evt = evt ? evt : window.event;
     let charCode = evt.which ? evt.which : evt.keyCode;
@@ -11,7 +11,7 @@ $(window).on("load", function () {
   }
   function getVariantFromOptions() {
     let variantArr = [];
-    jQuery(".product-category .mgfox").map(function (i, el) {
+    $('.product-category .mgfox').map(function (i, el) {
       let type = jQuery(this).attr("type");
       if (type === "radio" || type === "checkbox") {
         if ($(el).is(":checked")) {
