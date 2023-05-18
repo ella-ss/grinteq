@@ -158,6 +158,7 @@ $(window).on('load', function () {
     let selectedValues = getVariantFromOptions();
     let variants = window.product.variants;
     let found = false;
+    console.log(selectedValues);
     variants.forEach(function (variant) {
       let satisfied = true;
       let options = variant.options;
