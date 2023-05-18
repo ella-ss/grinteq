@@ -14,7 +14,6 @@
                  id="SingleOptionSelector-{{ forloop.index0 }}">
                 {% if product_option.name == 'Color' or product_option.name == 'Size' or product_option.name == 'Material' %}
                     <span class="option_label">{{ product_option.name }}</span>
-                    {% assign index = forloop.index %}
                     <div class="options_wrap d-flex mt-2">
                         {% for value in product_option.values %}
                             <label>
@@ -50,19 +49,19 @@
     <div class="qty-cart-container">
         <div class="form-group">
             <div class="row">
-                <div class="col-md-6">
-                    <label for="Quantity" class="form-label">Quantity</label>
+                <div class="col-md-12">
+                    <label for="Quantity" class="form-label mb-2">Quantity</label>
                     <div id="product_quantity">
                         <button type="button" id="sub" class="sub qty_button"> - </button>
                         <input type="text" v-model="form.quantity" id="Quantity" name="quantity" value="1" min="1"  class="input_qty">
                         <button type="button" id="add" class="add qty_button"> + </button>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12 mt-3">
                     <button
                             type="submit"
                             id="addToCart"
-                            class="button single-product__add-to-cart u-b6 js-ajax-add-to-cart"
+                            class="btn single-product__add-to-cart js-ajax-add-to-cart"
                             name="add"
                             data-add-to-cart
 
