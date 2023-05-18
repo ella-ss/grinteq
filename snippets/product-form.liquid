@@ -5,7 +5,7 @@
                  id="SingleOptionSelector-{{ forloop.index0 }}">
 
                 {% if product_option.name == 'Color' or product_option.name == 'Size' or product_option.name == 'Material' %}
-                    <span class="option_label">{{ product_option.name }} <span id="metal_name"></span></span>
+                    <span class="option_label">{{ product_option.name }}</span>
                     {% assign index = forloop.index %}
                     {% for value in product_option.values %}
                         <label>
