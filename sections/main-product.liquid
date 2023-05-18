@@ -16,9 +16,6 @@ window.product.variants = [];
             {%- endfor %}
         ],
     })
-    {% for option in variant.options -%}
-            window.product.variants[{{ forloop.index0 }}].options.push('{{ option }}');
-    {%- endfor %}
 {% endfor %}
 
 console.log('gg', window.product.variants)
