@@ -109,7 +109,7 @@ $(window).on("load", function () {
       if ($(this).next().val() > 1) $(this).next().val(+$(this).next().val() - 1);
     }
   });
-  function update_varient_id(variant) {
+  function update_variant_id(variant) {
     $("#variant_id").val(variant);
   }
   function update_slider_image(variantImg) {
@@ -173,39 +173,36 @@ $(window).on("load", function () {
     console.log(selectedValues);
     update_add_to_cart_text(found);
     get_sku(found);
-    update_varient_id(found.id);
+    update_variant_id(found.id);
     // update_slider_image(found.featured_image.id);
     update_product_price(found);
     updateMasterVariant(found);
     updateHistoryState(found);
   });
-
-  // jQuery("input[type=radio]").on("change", function () {
-  //   let selectedValues = getVariantFromSwatches();
-  //   let variants = window.product.variants;
-  //   let found = false;
-  //   variants.forEach(function (variant) {
-  //     let satisfied = true;
-  //     let options = variant.options;
-  //     selectedValues.forEach(function (option) {
-  //       if (satisfied) {
-  //         satisfied = option.value === variant[option.index];
-  //       }
-  //     });
-
-  //     if (satisfied) {
-  //       found = variant;
-  //     }
-  //   });
-  //   console.log(found.id);
-  //   update_add_to_cart_text(found);
-  //   get_sku(found);
-  //   update_varient_id(found.id);
-  //   // update_slider_image(found.featured_image.id);
-  //   update_product_price(found);
-  //   updateMasterVariant(found);
-  // });
-
+  jQuery("input[type=radio]").on("change", function () {
+    let selectedValues = getVariantFromSwatches();
+    let variants = window.product.variants;
+    let found = false;
+    variants.forEach(function (variant) {
+      let satisfied = true;
+      let options = variant.options;
+      selectedValues.forEach(function (option) {
+        if (satisfied) {
+          satisfied = option.value === variant[option.index];
+        }
+      });
+      if (satisfied) {
+        found = variant;
+      }
+    });
+    console.log(found.id);
+    update_add_to_cart_text(found);
+    get_sku(found);
+    update_variant_id(found.id);
+    update_slider_image(found.featured_image.id);
+    update_product_price(found);
+    updateMasterVariant(found);
+  });
   $(".product-slider").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
