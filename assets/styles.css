@@ -3955,7 +3955,7 @@ select {
   width: -moz-max-content;
   width: max-content;
   min-width: 45px;
-  padding: 5px;
+  padding: 5px 15px;
   text-align: center;
   background: #ededed;
 }
