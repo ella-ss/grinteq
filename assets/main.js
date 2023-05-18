@@ -124,16 +124,16 @@ $(window).on('load', function () {
   }
   function update_slider_image(variantImg) {
     let slideIndex = $('#' + variantImg).attr('data-index');
-    $(".product-slider").slick("slickGoTo", slideIndex - 1);
+    $('.product-slider').slick('slickGoTo', slideIndex - 1);
   }
   function update_add_to_cart_text(variant) {
     let addToCart = $('#addToCart');
     if (variant.available == false) {
-      addToCart.attr("disabled", true);
-      addToCart.text("Sold Out");
+      addToCart.attr('disabled', true);
+      addToCart.text('Sold Out');
     } else {
-      addToCart.attr("disabled", false);
-      addToCart.text("Add to Cart");
+      addToCart.attr('disabled', false);
+      addToCart.text('Add to Cart');
     }
   }
   function update_product_price(variant) {
@@ -183,7 +183,7 @@ $(window).on('load', function () {
     updateMasterVariant(found);
     updateHistoryState(found);
   });
-  $("input[type=radio]").on("change", function () {
+  $('input[type=radio]').on('change', function () {
     let selectedValues = getVariantFromSwatches();
     let variants = window.product.variants;
     let found = false;
