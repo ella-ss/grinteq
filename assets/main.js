@@ -153,10 +153,10 @@ $(window).on('load', function () {
     console.log(variant);
   }
   function updateMasterVariant(variant) {
-    let masterSelect = $(".product-form__variants");
+    let masterSelect = $('.product-form__variants');
     masterSelect.val(variant.id);
   }
-  $(".product-category .form_action").on("change", function () {
+  $('.product-category .form_action').on('change', function () {
     let selectedValues = getVariantFromOptions();
     let variants = window.product.variants;
     let found = false;
