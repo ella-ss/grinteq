@@ -147,7 +147,7 @@ $(window).on('load', function () {
     });
     update_add_to_cart_text(found);
     update_variant_id(found.id);
-    update_slider_image(found.featured_image.id);
+    update_slider_image(found);
     updateMasterVariant(found);
     updateHistoryState(found);
     update_product_price(found);
