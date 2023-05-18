@@ -115,13 +115,13 @@ $(window).on('load', function () {
     slidesToScroll: 1,
     arrows: false,
     fade: true,
-    cssEase: "linear",
-    asNavFor: ".product-slider-nav"
+    cssEase: 'linear',
+    asNavFor: '.product-slider-nav'
   });
   $('.product-slider-nav').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
-    asNavFor: ".product-slider",
+    asNavFor: '.product-slider',
     dots: false,
     centerMode: true,
     focusOnSelect: true,
