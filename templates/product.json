@@ -3,6 +3,8 @@
     "main": {
       "type": "main-product",
       "settings": {
+        "short_description": true,
+        "swatches_options": "swatches"
       }
     }
   },
