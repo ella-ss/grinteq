@@ -105,10 +105,13 @@ $(window).on('load', function () {
       formatMoney: formatMoney
     };
   }();
-  $('.add').on("click", function () {
+
+  //plus btn
+  $('.add').on('click', function () {
     $(this).prev().val(+$(this).prev().val() + 1);
   });
-  $(".sub").on("click", function () {
+  //minus btn
+  $('.sub').on('click', function () {
     if ($(this).next().val() > 1) {
       if ($(this).next().val() > 1) $(this).next().val(+$(this).next().val() - 1);
     }
