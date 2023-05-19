@@ -173,4 +173,8 @@ $(window).on('load', function () {
     prevArrow: $('.prev_btn'),
     nextArrow: $('.next_btn')
   });
+  $('.product-slider').on('beforeChange', function (event, slick) {
+    console.log('fggf');
+    lazyLoadInstance.update();
+  });
 });
