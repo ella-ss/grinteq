@@ -38,7 +38,8 @@
                                 <a href="{{ image.src | img_url: '480x480' }}" data-thumbnail-id="{{ image.id }}" data-product-single-thumbnail{% if featured_image == image %} aria-current="true"{% endif %} target="_blank">
                                     <img src="{{ image.src | img_url: '20x' }}"
                                          data-src="{{ image.src | img_url: '600x' }}"
-                                         alt="{{ image.alt | escape }}">
+                                         alt="{{ image.alt | escape }}"
+                                         class="lazy">
                                 </a>
                             </div>
                         {% endfor %}
