@@ -162,7 +162,7 @@ $(window).on('load', function () {
   //slick slider
 
   $('.product-slider').on("init", function (){
-    console.log('ff')
+    console.log('fggf')
     lazyLoadInstance.update()
   });
   $('.product-slider').slick({
