@@ -8,6 +8,7 @@
     {% endfor %}
 </style>
 <form action="/cart/add" method="post" enctype="multipart/form-data" id="add-to-cart-{{ product.handle }}">
+    {% assign current_variant = v %}
     {% unless product.has_only_default_variant %}
         {% for product_option in product.options_with_values %}
             <div class="product-option js-single-product-option-{{ option-name }} single-product-option-{{ option-name }} mb-3"
