@@ -3988,7 +3988,7 @@ select {
 .product-slider_arrows {
   position: absolute;
   left: 0;
-  bottom: 196px;
+  bottom: 23%;
   width: 100%;
   z-index: 1;
 }
@@ -4016,7 +4016,7 @@ select {
 
 @media all and (max-width: 768px) {
   .product-slider_arrows {
-    bottom: 115px;
+    bottom: 22%;
   }
   .slick-arrow {
     width: 20px;
