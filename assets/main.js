@@ -179,4 +179,9 @@ $(window).on('load', function () {
     prevArrow: $('.prev_btn'),
     nextArrow: $('.next_btn')
   });
+
+  $('.product-slider').on("beforeChange", function (){
+    console.log('ff')
+    lazyLoadInstance.update()
+  });
 });
