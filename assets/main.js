@@ -152,7 +152,6 @@ $(window).on('load', function () {
     update_product_price(found);
   });
   $('.product-slider_nav').on('init', function (event, slick) {
-    console.log('fggf');
     lazyLoadInstance.update();
   });
   $('.product-slider').slick({
@@ -172,9 +171,5 @@ $(window).on('load', function () {
     focusOnSelect: true,
     prevArrow: $('.prev_btn'),
     nextArrow: $('.next_btn')
-  });
-  $('.product-slider').on('beforeChange', function (event, slick) {
-    console.log('fggf');
-    lazyLoadInstance.update();
   });
 });
