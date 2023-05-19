@@ -91,13 +91,16 @@ $(window).on('load', function () {
     $(this).closest('.options_wrap').find('.swatch').removeClass('active');
     $(this).addClass('active');
   });
+
   function update_variant_id(variant) {
     $('#variant_id').val(variant);
   }
+
   function update_slider_image(variantImg) {
     let slideIndex = $('#' + variantImg).attr('data-index');
     $('.product-slider').slick('slickGoTo', slideIndex - 1);
   }
+
   function update_product_price(variant) {
     let regular_price = variant.price;
     let compare_price = variant.compare_at_price;
@@ -115,6 +118,7 @@ $(window).on('load', function () {
       $('#product_price').html(output);
     }
   }
+
   function update_add_to_cart_text(variant) {
     let addToCart = $('#addToCart');
     if (variant.available == false) {
@@ -125,10 +129,12 @@ $(window).on('load', function () {
       addToCart.text('Add to Cart');
     }
   }
+
   function updateMasterVariant(variant) {
     let masterSelect = $('.product-form__variants');
     masterSelect.val(variant.id);
   }
+
   $('input[type=radio]').on('change', function () {
     let selectedValues = getVariantFromSwatches();
     let variants = window.product.variants;
@@ -151,6 +157,7 @@ $(window).on('load', function () {
     updateHistoryState(found);
     update_product_price(found);
   });
+
   $('.product-slider').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -159,6 +166,7 @@ $(window).on('load', function () {
     cssEase: 'linear',
     asNavFor: '.product-slider_nav'
   });
+  
   $('.product-slider_nav').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
