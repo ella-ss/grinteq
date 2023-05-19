@@ -20,10 +20,10 @@ $(window).on('load', function () {
     if (!history.replaceState || !variant) {
       return;
     }
-    let newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + "?variant=" + variant.id;
+    let newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + "?variant=" + variant.id;
     window.history.replaceState({
-      path: newUrl
-    }, "", newUrl);
+      path: newurl
+    }, "", newurl);
   }
 
   /* Money Format */
@@ -91,16 +91,13 @@ $(window).on('load', function () {
     $(this).closest('.options_wrap').find('.swatch').removeClass('active');
     $(this).addClass('active');
   });
-
   function update_variant_id(variant) {
     $('#variant_id').val(variant);
   }
-
   function update_slider_image(variantImg) {
     let slideIndex = $('#' + variantImg).attr('data-index');
     $('.product-slider').slick('slickGoTo', slideIndex - 1);
   }
-
   function update_product_price(variant) {
     let regular_price = variant.price;
     let compare_price = variant.compare_at_price;
@@ -118,7 +115,6 @@ $(window).on('load', function () {
       $('#product_price').html(output);
     }
   }
-
   function update_add_to_cart_text(variant) {
     let addToCart = $('#addToCart');
     if (variant.available == false) {
@@ -129,13 +125,10 @@ $(window).on('load', function () {
       addToCart.text('Add to Cart');
     }
   }
-
   function updateMasterVariant(variant) {
     let masterSelect = $('.product-form__variants');
     masterSelect.val(variant.id);
   }
-
-  //onchange main function
   $('input[type=radio]').on('change', function () {
     let selectedValues = getVariantFromSwatches();
     let variants = window.product.variants;
@@ -158,12 +151,9 @@ $(window).on('load', function () {
     updateHistoryState(found);
     update_product_price(found);
   });
-
-  //slick slider
-
   $('.product-slider').on('init', function (event, slick) {
-    console.log('fggf')
-    lazyLoadInstance.update()
+    console.log('fggf');
+    lazyLoadInstance.update();
   });
   $('.product-slider').slick({
     slidesToShow: 1,
@@ -171,22 +161,16 @@ $(window).on('load', function () {
     arrows: false,
     fade: true,
     cssEase: 'linear',
-    // asNavFor: '.product-slider_nav'
+    asNavFor: '.product-slider_nav'
   });
-
   $('.product-slider_nav').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
-    // asNavFor: '.product-slider',
+    asNavFor: '.product-slider',
     dots: false,
     centerMode: true,
     focusOnSelect: true,
     prevArrow: $('.prev_btn'),
     nextArrow: $('.next_btn')
-  });
-
-  $('.product-slider').on("afterChange", function (){
-    console.log('ff')
-    lazyLoadInstance.update()
   });
 });
