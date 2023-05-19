@@ -37,7 +37,7 @@
                             <div data-index="{{ index }}" id="{{ image.id }}">
                                 <a href="{{ image.src | img_url: '480x480' }}" data-thumbnail-id="{{ image.id }}" data-product-single-thumbnail{% if featured_image == image %} aria-current="true"{% endif %} target="_blank">
                                     <img src="{{ image.src | img_url: '20x' }}"
-                                         data-src="{{ image.src | img_url: '600x' }}"
+                                         data-src="{{ image.src | img_url: '600x600', crop:'center' }}"
                                          alt="{{ image.alt | escape }}"
                                          class="lazy">
                                 </a>
@@ -58,7 +58,7 @@
                         {% for image in product.images %}
                             <img class="px-3 lazy"
                                  src="{{ image.src | img_url: '20x' }}"
-                                 data-src="{{ image.src | img_url: '200x' }}"
+                                 data-src="{{ image.src | img_url: '200x200', crop:'center' }}"
                                  alt="{{ image.alt | escape }}">
                         {% endfor %}
                     {% endif %}
