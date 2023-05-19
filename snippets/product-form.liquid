@@ -59,7 +59,7 @@
                     <button
                             type="submit"
                             id="addToCart"
-                            class="btn single-product__add-to-cart js-ajax-add-to-cart variant--{{ current_variant.available }}"
+                            class="btn single-product__add-to-cart js-ajax-add-to-cart variant--{{ current_variant.id }}"
                             name="add"
                             data-add-to-cart
                             {% unless current_variant.available %}disabled="disabled"{% endunless %}>
