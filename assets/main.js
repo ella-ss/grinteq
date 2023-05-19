@@ -151,7 +151,7 @@ $(window).on('load', function () {
     updateHistoryState(found);
     update_product_price(found);
   });
-  $('.product-slider').on('init', function (event, slick) {
+  $('.product-slider_nav').on('init', function (event, slick) {
     console.log('fggf');
     lazyLoadInstance.update();
   });
