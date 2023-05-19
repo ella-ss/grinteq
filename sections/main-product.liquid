@@ -68,8 +68,8 @@
                 <h1 class="h1 mb-2">
                     {{ product.title }}
                 </h1>
-                {% include 'product-price' %}
-                {% include 'product-form' %}
+                {% render 'product-price' %}
+                {% render 'product-form' %}
                 {% if product.description != blank %}
                     <div class="rte product_description mt-3">
                         {% if section.settings.short_description %}
