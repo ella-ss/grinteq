@@ -1,7 +1,7 @@
 <div class="page-width{% if cart == empty %} is-empty{% endif %}">
     {%- for item in cart.items -%}
-        <img src="{{ item.image | image_url: '20x' }}"
-             data-src="{{ item.image | image_url: '300x' }}"
+        <img src="{{ item.image | img_url: '20x' }}"
+             data-src="{{ item.image | img_url: '300x' }}"
              class="d-block cart-item__image lazy"
              alt="{{ item.image.alt | escape }}"
              loading="lazy"
