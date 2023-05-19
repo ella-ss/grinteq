@@ -20,10 +20,10 @@ $(window).on('load', function () {
     if (!history.replaceState || !variant) {
       return;
     }
-    let newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + "?variant=" + variant.id;
+    let newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + "?variant=" + variant.id;
     window.history.replaceState({
-      path: newurl
-    }, "", newurl);
+      path: newUrl
+    }, "", newUrl);
   }
 
   /* Money Format */
