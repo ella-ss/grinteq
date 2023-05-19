@@ -36,7 +36,9 @@
                             {% assign index = index | plus: 1 %}
                             <div data-index="{{ index }}" id="{{ image.id }}">
                                 <a href="{{ image.src | img_url: '480x480' }}" data-thumbnail-id="{{ image.id }}" data-product-single-thumbnail{% if featured_image == image %} aria-current="true"{% endif %} target="_blank">
-                                    <img src="{{ image.src | img_url: '600x600', crop:'center' }}" alt="{{ image.alt | escape }}">
+                                    <img data-src="{{ image.src | img_url: '600x600', crop:'center' }}"
+                                         src="{{ image.src | img_url: '20x20' }}"
+                                         alt="{{ image.alt | escape }}">
                                 </a>
                             </div>
                         {% endfor %}
