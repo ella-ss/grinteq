@@ -64,14 +64,15 @@
                 </h1>
                 {% include 'product-price' %}
                 {% include 'product-form' %}
-
-                <div class="rte product_description mt-3">
-                    {% if section.settings.short_description %}
-                        {{ product.description | truncate: 250 }}
-                    {% else %}
-                        {{ product.description }}
-                    {% endif %}
-                </div>
+                {% if product.description != blank %}
+                    <div class="rte product_description mt-3">
+                        {% if section.settings.short_description %}
+                            {{ product.description | truncate: 250 }}
+                        {% else %}
+                            {{ product.description }}
+                        {% endif %}
+                    </div>
+                {% endif %}
             </div> <!-- / col -->
         </div> <!-- / row -->
     </div>
