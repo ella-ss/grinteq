@@ -4,9 +4,7 @@
              data-src="{{ item.image | img_url: '300x' }}"
              class="d-block cart-item__image lazy"
              alt="{{ item.image.alt | escape }}"
-             loading="lazy"
-             width="150"
-             height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}"
+             style="width: 200px;height: 200px;"
         >
         <a class="d-block" href="{{ item.url }}">{{ item.product.title | escape }}</a>
         {%- if item.product.has_only_default_variant == false -%}
