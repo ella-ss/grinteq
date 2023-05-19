@@ -4016,7 +4016,7 @@ select {
 
 @media all and (max-width: 768px) {
   .product-slider_arrows {
-    bottom: 22%;
+    bottom: 115px;
   }
   .slick-arrow {
     width: 20px;
