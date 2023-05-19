@@ -180,9 +180,9 @@ $(window).on('load', function () {
     nextArrow: $('.next_btn')
   });
   $('.product-slider').on('afterChange', e => {
-    lazyLoad.update()
+    lazyLoadInstance.update()
   });
   $('.product-slider_nav').on('afterChange', e => {
-    lazyLoad.update()
+    lazyLoadInstance.update()
   });
 });
