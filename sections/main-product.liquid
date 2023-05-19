@@ -56,7 +56,11 @@
                 <div class="product-slider_nav mt-5 mb-5">
                     {% if product.images.size > 1 %}
                         {% for image in product.images %}
-                            <img class="px-3" width="50" src="{{ image.src | img_url: '200x200', crop:'center' }}" alt="{{ image.alt | escape }}">
+                            <img class="px-3 lazy"
+                                 width="50"
+                                 src="{{ image.src | img_url: '20x' }}"
+                                 data-src="{{ image.src | img_url: '200x', crop:'center' }}"
+                                 alt="{{ image.alt | escape }}">
                         {% endfor %}
                     {% endif %}
                 </div>
