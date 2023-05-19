@@ -186,5 +186,5 @@ $(window).on('load', function () {
       console.log('ff')
       lazyLoadInstance.update()
     });
-  }, 1000)
+  }, 5000)
 });
