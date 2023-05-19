@@ -47,14 +47,14 @@
                 </div>
                 <div class="product-slider_arrows d-flex justify-content-center">
                     <div class="prev_btn">
-                        {% include 'slider-arrow' %}
+                        {% render 'slider-arrow' %}
                     </div>
                     <div class="next_btn">
-                        {% include 'slider-arrow' %}
+                        {% render 'slider-arrow' %}
                     </div>
                 </div>
                 <div class="product-slider_nav mt-5 mb-5">
-                    {% if product.images.size > 1 %} 
+                    {% if product.images.size > 1 %}
                         {% for image in product.images %}
                             <img class="px-2 lazy"
                                  src="{{ image.src | img_url: '20x' }}"
