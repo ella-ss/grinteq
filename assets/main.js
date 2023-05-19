@@ -179,12 +179,8 @@ $(window).on('load', function () {
     prevArrow: $('.prev_btn'),
     nextArrow: $('.next_btn')
   });
-  $('.product-slider').on('afterChange', e => {
+  $('.product-slider_nav').on("beforeChange", function (){
     console.log('ff')
-    lazyLoadInstance.update()
-  });
-  $('.product-slider_nav').on('afterChange', e => {
-    console.log('dd')
     lazyLoadInstance.update()
   });
 });
