@@ -135,6 +135,7 @@ $(window).on('load', function () {
     masterSelect.val(variant.id);
   }
 
+  //onchange main function
   $('input[type=radio]').on('change', function () {
     let selectedValues = getVariantFromSwatches();
     let variants = window.product.variants;
@@ -158,6 +159,7 @@ $(window).on('load', function () {
     update_product_price(found);
   });
 
+  //slick slider
   $('.product-slider').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -166,7 +168,7 @@ $(window).on('load', function () {
     cssEase: 'linear',
     asNavFor: '.product-slider_nav'
   });
-  
+
   $('.product-slider_nav').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
