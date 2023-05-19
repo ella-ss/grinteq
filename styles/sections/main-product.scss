@@ -1,0 +1,78 @@
+.regular_price {
+  color: $color-primary;
+  font-weight: 600;
+}
+.swatch {
+  cursor: pointer;
+}
+.swatch[data-name="Color"] {
+  width: 35px;
+  height: 35px;
+  &.active {
+    position: relative;
+    top: -2px;
+    width: 37px;
+    height: 37px;
+    box-shadow: 0 0 0 1px $color-font;
+    border: 3px solid white;
+  }
+}
+.swatch:not([data-name="Color"]) {
+  width: max-content;
+  min-width: 45px;
+  padding: 5px 15px;
+  text-align: center;
+  background: #ededed;
+  &.active {
+    background: #d0d0d0;
+  }
+}
+.qty_button {
+  width: 37px;
+  height: 37px;
+  border: 0;
+  background: #ededed;
+  cursor: pointer;
+}
+.input_qty {
+  width: 60px;
+  height: 37px;
+  border: 0;
+  background: #ededed;
+  text-align: center;
+}
+.product-slider_arrows {
+  position: absolute;
+  left: 0;
+  bottom: 25%;
+  width: 100%;
+  z-index: 1;
+}
+.slick-arrow {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+.slick-arrow.next_btn {
+  transform: rotate(180deg);
+}
+.product-slider_nav img {
+  cursor: pointer;
+}
+@media all and (max-width: $screen-md) {
+  .slick-arrow {
+    width: 20px;
+    height: 20px;
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

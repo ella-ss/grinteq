@@ -1,0 +1,17 @@
+// libs
+@import './bootstrap-4-grid/bootstrap-grid';
+@import './slick';
+
+//variables
+@import './base/variables';
+
+//base
+@import './base/reset';
+@import './base/base';
+@import './base/typography';
+
+// components
+@import './components/buttons';
+
+// sections
+@import './sections/main-product';

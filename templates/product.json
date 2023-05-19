@@ -1,14 +1,22 @@
 {
   "sections": {
     "main": {
+<<<<<<< Updated upstream
       "type": "main-product",
       "settings": {
         "short_description": true,
         "swatches_options": "swatches"
       }
+=======
+      "type": "main-product"
+>>>>>>> Stashed changes
     }
   },
   "order": [
     "main"
   ]
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes

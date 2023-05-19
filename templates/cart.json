@@ -1,12 +1,20 @@
 {
   "sections": {
     "cart-items": {
+<<<<<<< Updated upstream
       "type": "cart-items",
       "settings": {
       }
+=======
+      "type": "cart-items"
+>>>>>>> Stashed changes
     }
   },
   "order": [
     "cart-items"
   ]
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes
