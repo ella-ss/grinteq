@@ -2,21 +2,18 @@
     {% if product.compare_at_price > product.price %}
         {% if product.price_varies %}
             {%- assign sale_price = product.price | money -%}
-            <span class="money regular_price" id="regular_price">  {{ sale_price }}</span>
+            <span class="money regular_price" id="regular_price">{{ sale_price }}</span>
         {% else %}
             <!-- {{ 'products.product.on_sale' | t }} -->
             <span class="money regular_price" id="regular_price">{{ product.price | money }}</span>
         {% endif %}
-
     {% else %}
-
         {% if product.price_varies %}
             {%- assign price = product.price | money -%}
             <span class="money regular_price" id="regular_price">{{ price }}</span>
         {% else %}
             <span class="money regular_price" id="regular_price">{{ product.price | money }}</span>
         {% endif %}
-
     {% endif %}
 
     {% if product.compare_at_price > product.price %}
@@ -33,5 +30,4 @@
           Save up to {{ saving }}
           {% endif %}</span>
     {% endif %}
-
 </div>
