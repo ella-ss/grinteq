@@ -26,7 +26,7 @@ $(window).on('load', function () {
     }, "", newurl);
   }
 
-  /* Money Format */
+  // Money Format
   theme.Currency = function () {
     let moneyFormat = "${{amount}}";
     function formatMoney(cents, format) {
@@ -79,6 +79,7 @@ $(window).on('load', function () {
   $('.add').on('click', function () {
     $(this).prev().val(+$(this).prev().val() + 1);
   });
+
   //minus btn
   $('.sub').on('click', function () {
     if ($(this).next().val() > 1) {
@@ -129,6 +130,8 @@ $(window).on('load', function () {
     let masterSelect = $('.product-form__variants');
     masterSelect.val(variant.id);
   }
+
+  //onchange main
   $('input[type=radio]').on('change', function () {
     let selectedValues = getVariantFromSwatches();
     let variants = window.product.variants;
@@ -151,10 +154,14 @@ $(window).on('load', function () {
     updateHistoryState(found);
     update_product_price(found);
   });
-  $('.product-slider_nav').on('init', function (event, slick) {
+
+  //slider
+  let sliderMain = $('.product-slider');
+  let sliderNav = $('.product-slider_nav');
+  sliderNav.on('init', function (event, slick) {
     lazyLoadInstance.update();
   });
-  $('.product-slider').slick({
+  sliderMain.slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
@@ -162,7 +169,7 @@ $(window).on('load', function () {
     cssEase: 'linear',
     asNavFor: '.product-slider_nav'
   });
-  $('.product-slider_nav').slick({
+  sliderNav.slick({
     slidesToShow: 3,
     slidesToScroll: 1,
     asNavFor: '.product-slider',
