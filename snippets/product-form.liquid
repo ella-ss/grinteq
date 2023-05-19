@@ -2,9 +2,9 @@
 <style>
     {% for color in colors %}
     {% assign color_value = color | split: ':' %}
-    .background-{{ color_value[0] | handleize }} {
-        background-color: {{ color_value[1] }} !important;
-    }
+        .background-{{ color_value[0] | handleize }} {
+            background-color: {{ color_value[1] }} !important;
+        }
     {% endfor %}
 </style>
 <form action="/cart/add" method="post" enctype="multipart/form-data" id="add-to-cart-{{ product.handle }}">
