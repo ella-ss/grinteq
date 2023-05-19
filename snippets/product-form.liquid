@@ -1,0 +1,79 @@
+{%- assign colors = settings.product_colors | strip_html | downcase | split: ',' -%}
+<style>
+    {% for color in colors %}
+    {% assign color_value = color | split: ':' %}
+        .background-{{ color_value[0] | handleize }} {
+            background-color: {{ color_value[1] }} !important;
+        }
+    {% endfor %}
+</style>
+<form action="/cart/add" method="post" enctype="multipart/form-data" id="add-to-cart-{{ product.handle }}">
+    {% assign current_variant = product.selected_or_first_available_variant %}
+    {% unless product.has_only_default_variant %}
+        {% for product_option in product.options_with_values %}
+            <div class="product-option js-single-product-option-{{ option-name }} single-product-option-{{ option-name }} mb-3"
+                 id="SingleOptionSelector-{{ forloop.index0 }}">
+                {% if product_option.name == 'Color' or product_option.name == 'Size' or product_option.name == 'Icon' %}
+                    <span class="option_label">{{ product_option.name }}</span>
+                    {% assign index = forloop.index %}
+                    <div class="options_wrap d-flex mt-2">
+                        {% for value in product_option.values %}
+                            <label>
+                                <input type="radio" class="form_action d-none" value="{{ value | escape }}" data-index="option{{ index }}" name="{{ product_option.name }}" {% if forloop.index == 1 %} checked {% endif %}/>
+                                <span class="d-block swatch swatch_info mr-2 {% if forloop.index == 1 %}active{% endif %} background-{{ value | handleize }}" data-value="{{ value }}" data-name="{{ product_option.name }}">{% unless product_option.name == 'Color'%}{{ value }}{% endunless %}</span>
+                            </label>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <span class="option_label d-block">{{ product_option.name }}</span>
+                    <select class="form-control form_action variant-option" data-index="option{{ forloop.index }}">
+                        {% for value in product_option.values %}
+                            <option value="{{ value | escape }}" {% if product_option.selected.value == value %} selected {% endif %}>{{ value }}</option>
+                        {% endfor %}
+                    </select>
+                {% endif %}
+            </div>
+        {% endfor %}
+    {% endunless %}
+    <input type="hidden" name="id"  id="variant_id" value="{{ product.selected_or_first_available_variant.id }}" class="form-control">
+
+    <select name="id" id="ProductSelect-{{ section.id }}" class="d-none product-form__variants no-js">
+        {% for variant in product.variants %}
+            <option value="{{ variant.id }}" {%- if variant == current_variant %} selected="selected" {%- endif -%}>
+                {{ variant.title }}  {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
+            </option>
+        {% endfor %}
+    </select>
+
+    <div class="qty-cart-container">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="Quantity" class="form-label mb-2">Quantity</label>
+                    <div id="product_quantity">
+                        <button type="button" id="sub" class="sub qty_button"> - </button>
+                        <input type="text" v-model="form.quantity" id="Quantity" name="quantity" value="1" min="1"  class="input_qty">
+                        <button type="button" id="add" class="add qty_button"> + </button>
+                    </div>
+                </div>
+                <div class="col-md-12 mt-3">
+                    <button
+                            type="submit"
+                            id="addToCart"
+                            class="btn single-product__add-to-cart js-ajax-add-to-cart variant--{{ current_variant.id }}"
+                            name="add"
+                            data-add-to-cart
+                            {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+                            <span data-add-to-cart-text>
+                              {% if current_variant.available %}
+                                  {{ 'products.product.add_to_cart' | t }}
+                              {% else %}
+                                  {{ 'products.product.sold_out' | t }}
+                              {% endif %}
+                         </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
