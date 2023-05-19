@@ -54,9 +54,9 @@
                     </div>
                 </div>
                 <div class="product-slider_nav mt-5 mb-5">
-                    {% if product.images.size > 1 %}
+                    {% if product.images.size > 1 %} 
                         {% for image in product.images %}
-                            <img class="px-3 lazy"
+                            <img class="px-2 lazy"
                                  src="{{ image.src | img_url: '20x' }}"
                                  data-src="{{ image.src | img_url: '200x200', crop:'center' }}"
                                  alt="{{ image.alt | escape }}">
