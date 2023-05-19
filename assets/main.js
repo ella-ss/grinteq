@@ -182,7 +182,7 @@ $(window).on('load', function () {
   });
 
   setTimeout(() => {
-    $('.product-slider').on("beforeChange", function (){
+    $('.product-slider').on("afterChange", function (){
       console.log('ff')
       lazyLoadInstance.update()
     });
