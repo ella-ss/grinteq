@@ -38,9 +38,7 @@
 
     <select name="id" id="ProductSelect-{{ section.id }}" class="d-none product-form__variants no-js">
         {% for variant in product.variants %}
-            <option value="{{ variant.id }}"
-                    {%- if variant == current_variant %} selected="selected" {%- endif -%}
-            >
+            <option value="{{ variant.id }}" {%- if variant == current_variant %} selected="selected" {%- endif -%}>
                 {{ variant.title }}  {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
             </option>
         {% endfor %}
