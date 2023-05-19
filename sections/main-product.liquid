@@ -57,7 +57,6 @@
                     {% if product.images.size > 1 %}
                         {% for image in product.images %}
                             <img class="px-3 lazy"
-                                 width="50"
                                  src="{{ image.src | img_url: '20x' }}"
                                  data-src="{{ image.src | img_url: '200x' }}"
                                  alt="{{ image.alt | escape }}">
