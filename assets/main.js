@@ -179,6 +179,9 @@ $(window).on('load', function () {
     prevArrow: $('.prev_btn'),
     nextArrow: $('.next_btn')
   });
+  $('.product-slider').on('afterChange', e => {
+    lazyLoad.update()
+  });
   $('.product-slider_nav').on('afterChange', e => {
     lazyLoad.update()
   });
