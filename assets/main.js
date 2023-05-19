@@ -171,13 +171,13 @@ $(window).on('load', function () {
     arrows: false,
     fade: true,
     cssEase: 'linear',
-    asNavFor: '.product-slider_nav'
+    // asNavFor: '.product-slider_nav'
   });
 
   $('.product-slider_nav').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
-    asNavFor: '.product-slider',
+    // asNavFor: '.product-slider',
     dots: false,
     centerMode: true,
     focusOnSelect: true,
