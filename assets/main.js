@@ -161,7 +161,7 @@ $(window).on('load', function () {
 
   //slick slider
 
-  $('.product-slider').on("init", function (){
+  $('.product-slider_nav').on("init", function (){
     console.log('fggf')
     lazyLoadInstance.update()
   });
@@ -185,10 +185,8 @@ $(window).on('load', function () {
     nextArrow: $('.next_btn')
   });
 
-  setTimeout(() => {
-    $('.product-slider').on("afterChange", function (){
-      console.log('ff')
-      lazyLoadInstance.update()
-    });
-  }, 5000)
+  $('.product-slider').on("afterChange", function (){
+    console.log('ff')
+    lazyLoadInstance.update()
+  });
 });
