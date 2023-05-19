@@ -65,11 +65,11 @@
       {{ content_for_layout }}
     </main>
 
+    <script src="{{ 'main.min.js' | asset_url }}"></script>
+
     <script>
       let theme = window.theme || {};
       let lazyLoadInstance = new LazyLoad({});
     </script>
-
-    <script src="{{ 'main.min.js' | asset_url }}"></script>
   </body>
 </html>
