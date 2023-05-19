@@ -47,8 +47,8 @@
 
     {{ content_for_header }}
 
+    <script src="{{ 'lazyload.min.js' | asset_url }}"></script>
   </head>
-
   <body class="gradient">
     {% if template.name == 'index' %}
       <div class="container">
@@ -66,7 +66,6 @@
     </main>
 
     <script src="{{ 'main.min.js' | asset_url }}"></script>
-    <script src="{{ 'lazyload.min.js' | asset_url }}"></script>
 
     <script>
       let theme = window.theme || {};
