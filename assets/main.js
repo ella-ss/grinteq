@@ -161,7 +161,7 @@ $(window).on('load', function () {
 
   //slick slider
 
-  $('.product-slider_nav').on("init", function (){
+  $('.product-slider_nav').on('init', function (event, slick) {
     console.log('fggf')
     lazyLoadInstance.update()
   });
