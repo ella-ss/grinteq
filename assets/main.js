@@ -160,6 +160,11 @@ $(window).on('load', function () {
   });
 
   //slick slider
+
+  $('.product-slider').on("beforeChange", function (){
+    console.log('ff')
+    lazyLoadInstance.update()
+  });
   $('.product-slider').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -178,10 +183,5 @@ $(window).on('load', function () {
     focusOnSelect: true,
     prevArrow: $('.prev_btn'),
     nextArrow: $('.next_btn')
-  });
-
-  $('.product-slider').on("beforeChange", function (){
-    console.log('ff')
-    lazyLoadInstance.update()
   });
 });
